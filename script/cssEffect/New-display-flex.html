@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display: flex</title>
+    <style>
+        /* reset */
+        @import url('https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean');
+
+        @font-face {
+            font-family: 'BBTreeTR';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeTR.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'S-CoreDream-3Light';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        *::before, *::after {box-sizing: border-box;}
+        h1,h2,h3,h4,h5,h6 {font-weight: normal;}
+        em {font-style: normal;}
+        a {text-decoration: none;}
+
+        /* layout */
+        #contents {}
+        #main {
+            height: 100vh;
+            background: #F4B861;
+        }
+        #about {
+            height: 2000px;
+        }
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* main */
+        .main .title {
+            height: 100px;
+            background: #ccc;
+        }
+        .main .title strong {
+            font-family: 'BBTreeTR';
+            border: 3px solid #762917;
+            border-radius: 40px;
+            padding: 7px 20px;
+            color: #762917;
+            background: #fff;
+            font-size: 22px;
+            display: inline-block;
+            margin: 30px 10px 20px 0;
+        }
+        .main .desc {
+            height: calc(90vh - 100px);
+            background: #FDF2E0;
+            border: 4px solid #762917;
+            text-align: center;
+            padding: 110px 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10vh;
+        }
+        .main .desc::before {
+            content: '';
+            width: 100%;
+            height: 4px;
+            background: #762917;
+            position: absolute;
+            left: 0;
+            bottom: 6px;
+        }
+        .main .desc::after {
+            content: '';
+            width: 100%;
+            height: 4px;
+            background: #762917;
+            position: absolute;
+            left: 0;
+            bottom: 16px;
+        }
+        .main .desc h2 {
+            font-size: 100px;
+            line-height: 1;
+            font-family: 'Black Han Sans';
+            color: #fff;
+            -webkit-text-stroke: 3px #762917;
+            font-weight: normal;
+            letter-spacing: -1px;
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+            padding-top: 10px;
+            margin-bottom: 20px;
+        }
+        .main .desc h2::after {
+            content: '';
+            position: absolute;
+            left: -10px;
+            bottom: 3px;
+            width: 100%;
+            height: 30px;
+            background: #ffa439;
+            border: 3px solid #762917;
+            z-index: -1;
+            border-radius: 30px;
+        }
+        .main .desc h1 {
+            font-size: 180px;
+            line-height: 1.4;
+            letter-spacing: -10px;
+            font-family: 'Black Han Sans';
+            font-weight: normal;
+            color: #E5774F;
+            -webkit-text-stroke: 3px #762917;
+        }
+        .main .desc h1 strong {
+            font-weight: normal;
+            color: #ffa439;
+        }
+        .main .desc p {
+            font-family: 'BBTreeTR';
+            color: #9E513C;
+            font-size: 36px;
+        }
+
+        @media (max-width: 1420px){
+            .container {width: 98%}
+            .main .desc h2 {font-size: 10vmin;}
+            .main .desc h1 {font-size: 20vmin; line-height: 20vmin; padding: 1vw;}
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="contents">
+        <section id="main">
+            <div class="container">
+                <div class="main">
+                    <div class="title">
+                        <strong>라인 초등학교 CSS 수업</strong><strong>웹스토리보이</strong>
+                    </div>
+                    <div class="desc">
+                        <div class="inner">
+                            <h2>display:flex</h2>
+                            <h1><em>디스플레이</em> <strong>플랙스</strong></h1>
+                            <p>사이트의 레이아웃은 어떻게 작업할까요?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //main -->
+
+        <section id="about">
+
+        </section>
+        <!-- //about -->
+    </div>
+
+</body>
+</html>

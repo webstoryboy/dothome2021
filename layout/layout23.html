@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0;padding: 0;}
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        #wrap {
+            background: #000;
+        }
+        #main {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            height: 200px;
+            background: #ccc;
+        }
+        aside {
+            width: 30%;
+            height: 600px;
+            background: #999;
+            float: left;
+        }
+        .cont1 {
+            width: 70%;
+            height: 200px;
+            background: #888;
+            float: left;
+        }
+        .cont2 {
+            width: 70%;
+            height: 200px;
+            background: #777;
+            float: left;
+        }
+        .cont3 {
+            width: 70%;
+            height: 200px;
+            background: #888;
+            float: left;
+        }
+        footer {
+            height: 200px;
+            background: #666;
+            clear: both;
+        }
+        @media (max-width: 1200px){
+            #main {width: 100%;}
+            .cont1 {height: 300px;}
+            .cont2 {height: 300px;}
+            .cont3 {width: 100%;}
+        }
+        @media (max-width: 900px){ 
+            aside {width: 100%;}
+            .cont1 {width: 50%;}
+            .cont2 {width: 50%;}
+        }
+        @media (max-width: 600px){ 
+            .cont1 {width: 100%;}
+            .cont2 {width: 100%;}
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <main id="main" class="clearfix">
+            <header></header>
+            <aside></aside>
+            <section class="cont1"></section>
+            <section class="cont2"></section>
+            <section class="cont3"></section>
+            <footer></footer>
+        </main>
+        
+    </div>
+</body>
+</html>

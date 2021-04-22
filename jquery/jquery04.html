@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+
+    <style>
+        body {
+            padding: 30px;
+        }
+        li {
+            margin: 5px;
+            padding: 5px;
+            color: #c7354e;
+        }
+        a {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery 선택자</h1>
+    <div id="wrap">
+        <div id="list1" class="list">
+            <ul>
+                <li class="list01"><a href="https://www.naver.com">list01</a></li>
+                <li class="list02"><a href="https://www.daum.net">list02</a></li>
+                <li class="list03">list03</li>
+                <li class="list04">list04</li>
+                <li class="list05">list05</li>
+                <li class="list06">list06</li>
+                <li class="list07">list07</li>
+                <li class="list08">list08</li>
+                <li class="list09">list09</li>
+                <li class="list10">list10
+                    <ul>
+                        <li class="list10-1">list10-1</li>
+                        <li class="list10-2">list10-2</li>
+                        <li class="list10-3">list10-3</li>
+                        <li class="list10-4">list10-4</li>
+                        <li class="list10-5">list10-5</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="list2" class="list">
+            <ul>
+                <li class="list01">list01</li>
+                <li class="list02">list02</li>
+                <li class="list03">list03</li>
+                <li class="list04">list04</li>
+                <li class="list05">list05</li>
+                <li class="list06">list06</li>
+                <li class="list07">list07</li>
+                <li class="list08">list08</li>
+                <li class="list09">list09</li>
+                <li class="list10">list10
+                    <ul>
+                        <li class="list10-1">list10-1</li>
+                        <li class="list10-2">list10-2</li>
+                        <li class="list10-3">list10-3</li>
+                        <li class="list10-4">list10-4</li>
+                        <li class="list10-5">list10-5</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="list3" class="list">
+            <ul>
+                <li class="list01">list01</li>
+                <li class="list02">list02</li>
+                <li class="list03"></li>
+                <li class="list04">list04</li>
+                <li class="list05">list05</li>
+                <li class="list06">list06</li>
+                <li class="list07">list07</li>
+                <li class="list08">list08</li>
+                <li class="list09">list09</li>
+                <li class="list10">list10
+                    <ul>
+                        <li class="list10-1">list10-1</li>
+                        <li class="list10-2">list10-2</li>
+                        <li class="list10-3">list10-3</li>
+                        <li class="list10-4">list10-4</li>
+                        <li class="list10-5">list10-5</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //기본선택자
+            //$("li").css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"}); //요소 선택자
+            //$("*").css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"}); //전체 선택자
+            //$("#list3").css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"}); //아이디 선택자 
+            //$(".list").css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"}); //클래스 선택자
+            //$(".list07, .list01, .list03").css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"}); //그룹 선택자
+
+            //계층 선택자
+            //$("div ul").css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"});
+            //$("div > ul").css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"});
+            //$(".list05 + li").css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"});
+            //$(".list05 ~ li").css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"});
+        
+            //$("#list1").parent().css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"});
+            //$(".list01").parents().css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"});
+            //$(".list10").children().css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"});
+            //$(".list05").prev().css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"});
+            //$(".list05").prevAll().css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"});
+            //$(".list05").next().css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"});
+            //$(".list05").nextAll().css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"});
+            //$(".list05").siblings().css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"});
+
+            //속성 선택자
+            //$("li[class]").css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"});
+            //$("li[class='list09']").css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"});
+            //$("li a[href^='http']").css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"});
+            //$("li a[href$='com']").css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"});
+            //$("li a[href*='naver']").css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"});
+        
+            //기본 필터 선택자
+            //$("li:eq(4)").css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"});
+            //$("li:lt(4)")
+            //$("li:gt(4)")
+            //$("li:first")
+            //$("li:last")
+            //$("li:odd")
+            //$("li:even")
+
+            //내용 필터 선택자
+            //$("li:contains(list02)").css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"});
+            $("li:empty").css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"});
+            $("li:parent").css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"});
+            $("li:has(ul)").css({"border":"1px dashed #a51a3d", "background":"#f9f2f4"});
+            
+        });
+    </script>
+</body>
+</html>

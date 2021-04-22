@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        img {
+            width: 100%;
+        }
+        #wrap {}
+        #header {
+            height: 100px;
+            background: #ccc;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+        }
+        .header .logo {
+            width: 20%;
+        }
+        .header .nav {
+            width: 60%;
+            text-align: center;
+        }
+        .header .nav li {
+            display: inline;
+        }
+        .header .log {
+            width: 20%;
+            text-align: right;
+        }
+
+        #banner {
+            height: 500px;
+            background: url(img/banner-bg2.png) no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #banner h2 {
+            
+        }
+        #content {
+            background: #F4FAFE;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .cont1 {}
+        .cont1 span {
+            margin-bottom: 20px;
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            border-radius: 30px;
+            padding: 5px 10px;
+        }
+        .cont1 h3 {
+            font-size: 40px;
+            padding: 30px 300px;
+        }
+        .cont1 figure {
+            padding: 100px;
+            padding-top: 20px;
+        }
+        .cont2 { padding: 0 100px;}
+        .cont2 p {
+            margin-bottom: 50px;
+        }
+
+        .cont2-box {
+            background: #ccc;
+            height: 500px;
+            overflow: hidden;
+        }
+        .cont2-box .box1 {
+            float: left;
+            width: 50%;
+            height: 100%;
+        }
+        .cont2-box .box1-1 {
+            background: url(img/cont2-img1.png) no-repeat right bottom;
+            background-size: 300px;
+            height: 50%; 
+        }
+        .cont2-box .box1-2 {height: 50%; background: #666;}
+
+        .cont2-box .box2 {
+            float: left;
+            width: 50%;
+            height: 100%;
+            background: #444;
+        }
+
+        #footer {}
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(0,0,0,0,.3);
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="container">
+                <div class="header">
+                    <div class="logo">
+                        네이버 인플루언서 로고
+                    </div>
+                    <nav class="nav">
+                        <ul>
+                            <li><a href="#">인플루언서 안내</a></li>
+                            <li><a href="#">광고수익 혜택</a></li>
+                            <li><a href="#">성장지원 프로그램</a></li>
+                            <li><a href="#">브랜트커텍트</a></li>
+                            <li><a href="#">공지</a></li>
+                        </ul>
+                    </nav>
+                    <div class="log"><a href="#">로그인</a></div> 
+                </div>
+            </div>
+        </header>
+        <section id="banner">
+            <h2>인플루언서의 수익을 더 높여줄
+                특별한 광고가 제공됩니다.</h2>
+        </section>
+        <section id="content">
+            <div class="container">
+                <div class="cont1">
+                    <span>New</span>
+                    <h3>더 커진 수익과 효과적인 노출
+                        새롭고 강력한 헤드뷰 광고를 선보입니다.</h3>
+                    <figure>
+                        <img src="img/content-img1.png" alt="">
+                    </figure>
+                </div>
+                <div class="cont2">
+                    <p>새로운 헤드뷰 광고 상품은 콘텐츠에 방해되지 않으면서도<br>
+                        뛰어난 노출과 수익을 제공하는 신규 광고입니다.<br>
+                        네이버에서 적극적인 창작 활동을 통해 더 좋아진 혜택을 경험해 보세요</p>
+                    <div class="cont2-box">
+                        <div class="box1">
+                            <div class="box1-1">
+                                <h4>dkdk</h4>
+                                <p>sdlk</p>
+                            </div>
+                            <div class="box1-2">2</div>
+                        </div>
+                        <div class="box2">3</div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>

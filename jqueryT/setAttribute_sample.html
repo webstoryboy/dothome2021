@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQueyr | attr()</title>
+    <style>
+        @font-face {
+            font-family: 'NEXON Lv1 Gothic OTF';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'NEXON Lv1 Gothic OTF';
+        }
+        body {
+            padding: 5%;
+            margin-bottom: 400px;
+        }
+        h1 {
+            padding-bottom: 20px;
+        }
+        hr {
+            margin: 5% 0;
+            border-style: dashed;
+            border-color: #e6e6e6;
+            border-width: 1px;
+        }
+        img {
+            vertical-align: top;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        .sample {
+            border: 1px solid #e6e6e6;
+            border-radius: 5px;
+        }
+        .sample h2 {
+            position: relative;
+            font-size: 14px;
+            background-color: #f2f2f2;
+            padding: 15px;
+            border-bottom: 1px solid #e6e6e6;
+            border-radius: 5px 5px 0 0;
+        }
+        .sample h2 .dot {
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            display: block;
+            border-radius: 50%;
+            position: absolute;
+            right: 30px;
+            top: 20px;
+        }
+        .sample h2 .dot::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            border-radius: 50%;
+            position: absolute;
+            left: -15px;
+            top: 0;
+        }
+        .sample h2 .dot::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            position: absolute;
+            border-radius: 50%;
+            right: -15px; 
+            top: 0;
+        }
+        .sample .ex {
+            padding: 20px;
+        }
+        .sample .ex .text {
+            margin: 10px 0;
+        }
+        .sample .re {
+            padding: 20px;
+            border-top: 1px solid #e6e6e6;
+        }
+        .sample .re a {
+            color: #333;
+            text-decoration: none;
+            border: 1px solid #333;
+            border-radius: 30px;
+            padding: 10px 30px;
+            margin: 5px;
+            display: inline-block;
+        }
+        .sample .re a:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* option */
+        .img {
+            width: 100%;
+            max-width: 400px;
+        }
+        .img3 {
+            width: 18%;
+        }
+        .tab-menu {
+            width: 450px;
+            margin: 30px auto;
+        }
+        .tab-btn ul {
+            overflow: hidden;
+        }
+        .tab-btn li {
+            float: left;
+            width: 20%;
+            text-align: center;
+        }
+        .tab-btn li a {
+            padding: 20px 5px;
+            display: block;
+            background-color: #1e88e5;
+            color: #fff;
+            font-size: 13px;
+        }
+        .tab-btn li a:hover {
+            opacity: 0.8;
+        }
+        .tab-img img {
+            width: 100%; 
+            margin: 0;
+            border-radius: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>JavaScript getAttribute()</h1>
+
+    <div id="sample1" class="sample">
+        <h2>Sample01 : 이미지 속성 알아내기 <span class="dot"></span></h2>
+        <div class="ex ex1">
+            <img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="샘플이미지" class="img">
+            <p class="text text1">여기에 표시됩니다.</p>
+        </div>
+        <div class="re">
+            <a href="#c" class="btn1-1">클릭 : 이미지의 주소 값을 가져옵니다.</a>
+            <a href="#c" class="btn1-2">클릭 : 이미지의 alt 속성 값을 가져옵니다.</a>
+            <a href="#c" class="btn1-3">클릭 : 이미지의 클래스 값을 가져옵니다.</a>
+        </div>
+    </div>
+
+    <hr>
+
+    <h1>JavaScript setAttribute()</h1>
+    <div id="sample2" class="sample">
+        <h2>Sample02 : 이미지 속성 변경하기 <span class="dot"></span></h2>
+        <div class="ex ex2">
+            <img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover02.jpg" alt="샘플이미지2" width="400">
+            <img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover03.jpg" alt="샘플이미지3" width="400">
+            <p class="text text2">여기에 표시됩니다.</p>
+        </div>
+        <div class="re">
+            <a href="#c" class="btn2-1">클릭 : 이미지의 크기를 200px 변경하기</a>
+            <a href="#c" class="btn2-2">클릭 : 이미지의 크기를 300px 변경하기</a>
+            <a href="#c" class="btn2-3">클릭 : 이미지의 크기를 500px 변경하기</a>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample3" class="sample">
+        <h2>Sample03 : 이미지 속성 순차적으로 변경하기 <span class="dot"></span></h2>
+        <div class="ex ex3">
+            <img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지4" width="200">
+            <img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="샘플이미지5" width="200">
+            <img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover06.jpg" alt="샘플이미지6" width="200">
+            <img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover07.jpg" alt="샘플이미지7" width="200">
+            <img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover08.jpg" alt="샘플이미지8" width="200">
+        </div>
+        <div class="re">
+            <a href="#c" class="btn3-0">리셋</a>
+            <a href="#c" class="btn3-1">클릭 : 이미지의 크기를 순차적으로 변경하기</a>
+        </div>
+    </div>
+
+    <!-- script -->
+    <script>
+        //Element.setAttribute(name, value);
+        //element.getAttribute(attributeName);
+        //element.removeAttribute(attrName);
+
+        document.querySelector(".btn1-1").addEventListener("click", function(){
+            const src = document.querySelector(".ex1 .img").getAttribute("src");
+            document.querySelector(".text").innerHTML = "이 사진의 주소 값은 : " + src + "입니다.";
+        });
+
+        document.querySelector(".btn1-2").addEventListener("click", function(){
+            const src = document.querySelector(".ex1 .img").getAttribute("alt");
+            document.querySelector(".text").innerHTML = src;
+        });
+
+        document.querySelector(".btn1-3").addEventListener("click", function(){
+            const src = document.querySelector(".ex1 .img").getAttribute("class");
+            document.querySelector(".text").innerHTML = src;
+        });
+
+        //sample2
+        document.querySelector(".btn2-1").addEventListener("click", function(){
+            //document.querySelector(".ex2 img").setAttribute("width","200px");
+            document.querySelector(".text2").innerHTML = "width 값이 200으로 변경되었습니다.";
+            document.querySelectorAll(".ex2 img").forEach(elem => {
+                elem.setAttribute("width","200px");
+            });
+        });
+        document.querySelector(".btn2-2").addEventListener("click", function(){
+            document.querySelector(".text2").innerHTML = "width 값이 400으로 변경되었습니다.";
+            document.querySelectorAll(".ex2 img").forEach(elem => {
+                elem.setAttribute("width","300px");
+            });
+        });
+        document.querySelector(".btn2-3").addEventListener("click", function(){
+            document.querySelector(".text2").innerHTML = "width 값이 500으로 변경되었습니다.";
+            document.querySelectorAll(".ex2 img").forEach(elem => {
+                elem.setAttribute("width","500px");
+            });
+        });
+
+        //sample03
+        document.querySelector(".btn3-0").addEventListener("click", function(){ 
+            document.querySelectorAll(".ex3 img").forEach((elem) => {
+                elem.setAttribute("width","200px");
+            })
+        })
+
+        document.querySelector(".btn3-1").addEventListener("click", function(){
+            document.querySelectorAll(".ex3 img").forEach((elem, index) => {
+                console.log(elem)
+                let size = (index + 1) * 50;
+                elem.setAttribute("width", size);
+            })
+        });
+    </script>
+</body>
+</html>

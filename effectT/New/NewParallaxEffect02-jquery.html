@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Effect01 - jQuery</title>
+
+    <link rel="stylesheet" href="skin/prism.css">
+    <style>
+        @font-face {
+            font-family: 'NEXON Lv1 Gothic OTF';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'TmonMonsori';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            -webkit-text-size-adjust: 100%;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+
+        /* option */
+        #contents > section {
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            border-radius: 10px;
+            color: #fff;
+            font-size: 6vw;
+            font-family: 'TmonMonsori';
+        }
+
+        /* section */
+        #section1 {background:radial-gradient(ellipse farthest-corner at center bottom, #69d2fb 0%, #20438E 100%);}
+        #section2 {background:radial-gradient(ellipse farthest-corner at center top, #f39264 0%, #f2606f 100%); }
+        #section3 {background:radial-gradient(ellipse farthest-corner at center top, #ffee75, #ff8930);}
+        #section4 {background:radial-gradient(ellipse farthest-corner at center bottom, #6beace, #2e9aa4);}
+        #section5 {background:radial-gradient(ellipse farthest-corner at center top, #cbf49a, #1ea623);}
+        #section6 {background:radial-gradient(ellipse farthest-corner at center top, #6CEBCF 0%, #38a7aa 100%);}
+    </style>
+</head>
+
+<body>
+    <main id="contents">
+        <section id="section1">section1</section>
+        <section id="section2">section2</section>
+        <section id="section3">section3</section>
+        <section id="section4">section4</section>
+        <section id="section5">section5</section>
+        <section id="section6">section6</section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="skin/prism.js"></script>
+    <script>
+     
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'NEXON Lv2 Gothic';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        * {
+            margin: 0; padding: 0; 
+            box-sizing: border-box;
+        }
+        #conetets > section .num {
+            position: absolute; left: 70%; top: 0%;
+            z-index: 90;
+            font-size: 20vw;
+            color: #fff;
+            font-weight: 100;
+            opacity: 0.082;
+            letter-spacing: -1vw;
+            font-family: 'Poppins', sans-serif;
+        }
+        #conetets > section .imgWrap {
+            position: absolute; left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+            width: 50vw; height: 50vh;
+        }
+        #conetets > section .imgWrap .img {
+            width: 100%; height: 100%;
+        }
+        #conetets > section .title {
+            position: absolute; left: 20%; top: 60%;
+            width: 50vw;
+            z-index: 110;
+            color: #fff;
+            font-size: 4vw;
+            line-height: 1.4;
+            word-break: keep-all;
+            font-family: 'NEXON Lv2 Gothic';
+        }
+        #section1 .imgWrap .img {background: url(img/images10@2.jpg); background-size: cover;}
+        #section2 .imgWrap .img {background: url(img/images11@2.jpg); background-size: cover;}
+        #section3 .imgWrap .img {background: url(img/images12@2.jpg); background-size: cover;}
+        #section4 .imgWrap .img {background: url(img/images13@2.jpg); background-size: cover;}
+        #section5 .imgWrap .img {background: url(img/images14@2.jpg); background-size: cover;}
+        #section6 .imgWrap .img {background: url(img/images15@2.jpg); background-size: cover;}
+    
+        /* set */
+        #section1 {position: relative; z-index: 6000; background: #111;}
+        #section2 {position: relative; z-index: 5000; background: #ccc;}
+        #section3 {position: relative; z-index: 4000; background: #111; height: 900vh;}
+        #section4 {position: relative; z-index: 5000; background: #000;}
+        #section5 {position: relative; z-index: 5000; background: #111;}
+        #section6 {position: relative; z-index: 5000; background: #000;}
+
+        .sec1 {position: relative; width: 100%; height: 100vh;}
+        .sec2 {position: relative; width: 100%; height: 100vh;}
+        .sec3 {position: fixed; left: 0; top: 0; width: 100%; height: 100vh;}
+        .sec4 {position: relative; width: 100%; height: 100vh;}
+        .sec5 {position: relative; width: 100%; height: 100vh;}
+        .sec6 {position: relative; width: 100%; height: 100vh;}
+
+        .sec3-wrap {
+            overflow: hidden;
+            width: 500vw;
+        }
+        .sec3-wrap > div {
+            float: left;
+            width: 100vw; height: 100vh;
+        }
+        .sec3-wrap > div:nth-child(1) {background: #999;}
+        .sec3-wrap > div:nth-child(2) {background: #888;}
+        .sec3-wrap > div:nth-child(3) {background: #777;}
+        .sec3-wrap > div:nth-child(4) {background: #666;}
+        .sec3-wrap > div:nth-child(5) {background: #555;}
+
+    </style>
+</head>
+<body>
+    <div id="conetets">
+        <section id="section1">
+            <div class="sec1">
+                <span class="num">01</span>
+                <div class="imgWrap">
+                    <div class="img"></div>
+                </div>
+                <div class="title">매 순간에 최선을 다하고, 끊임없이 변화한다.</div>
+            </div>
+        </section>
+        <!-- //section1 -->
+        <section id="section2">
+            <div class="sec2">
+                <span class="num">02</span>
+                <div class="imgWrap">
+                    <div class="img"></div>
+                </div>
+                <div class="title">매 순간에 최선을 다하고, 끊임없이 변화한다.</div>
+            </div>
+        </section>
+        <!-- //section2 -->
+        <section id="section3">
+            <div class="sec3">
+                <div class="sec3-wrap">
+                    <div>11</div>
+                    <div>22</div>
+                    <div>33</div>
+                    <div>44</div>
+                    <div>55</div>
+                </div>
+            </div>
+        </section>
+        <!-- //section3 -->
+        <section id="section4">
+            <div class="sec4">
+                <span class="num">04</span>
+                <div class="imgWrap">
+                    <div class="img"></div>
+                </div>
+                <div class="title">매 순간에 최선을 다하고, 끊임없이 변화한다.</div>
+            </div>
+        </section>
+        <!-- //section4 -->
+        <section id="section5">
+            <div class="sec5">
+                <span class="num">05</span>
+                <div class="imgWrap">
+                    <div class="img"></div>
+                </div>
+                <div class="title">매 순간에 최선을 다하고, 끊임없이 변화한다.</div>
+            </div>
+        </section>
+        <!-- //section5 -->
+        <section id="section6">
+            <div class="sec6">
+                <span class="num">06</span>
+                <div class="imgWrap">
+                    <div class="img"></div>
+                </div>
+                <div class="title">매 순간에 최선을 다하고, 끊임없이 변화한다.</div>
+            </div>
+        </section>
+        <!-- //section6 -->
+    </div>
+    <!-- //conetets -->
+
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script>
+        $(window).scroll(function(){
+            let scrollTop = $(window).scrollTop();
+
+            if( scrollTop > $("#section2").offset().top ){
+                $("#section2").css("background","red");
+            }
+            //3번째 섹션에 왔을 때 스크롤탑을 0으로 초기화
+            let offset = scrollTop -  $("#section3").offset().top;
+
+            if( scrollTop > $("#section3").offset().top ){
+                //$("#section3 .sec3-wrap > div:nth-child(1)").css("background","red");
+                $("#section3 .sec3").css("left", -offset );
+            }
+
+            if( scrollTop > $("#section4").offset().top ){
+                $("#section4").css("background","blue");
+            }
+        });
+    </script>
+</body>
+</html>

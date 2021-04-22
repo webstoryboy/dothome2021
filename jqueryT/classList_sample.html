@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript classList</title>
+    <style>
+        @font-face {
+            font-family: 'NEXON Lv1 Gothic OTF';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'NEXON Lv1 Gothic OTF';
+        }
+        body {
+            padding: 5%;
+            margin-bottom: 400px;
+        }
+        h1 {
+            padding-bottom: 20px;
+        }
+        hr {
+            margin: 5% 0;
+            border-style: dashed;
+            border-color: #e6e6e6;
+            border-width: 1px;
+        }
+        img {
+            vertical-align: top;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        .sample {
+            border: 1px solid #e6e6e6;
+            border-radius: 5px;
+        }
+        .sample h2 {
+            position: relative;
+            font-size: 14px;
+            background-color: #f2f2f2;
+            padding: 15px;
+            border-bottom: 1px solid #e6e6e6;
+            border-radius: 5px 5px 0 0;
+        }
+        .sample h2 .dot {
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            display: block;
+            border-radius: 50%;
+            position: absolute;
+            right: 30px;
+            top: 20px;
+        }
+        .sample h2 .dot::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            border-radius: 50%;
+            position: absolute;
+            left: -15px;
+            top: 0;
+        }
+        .sample h2 .dot::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            position: absolute;
+            border-radius: 50%;
+            right: -15px; 
+            top: 0;
+        }
+
+        .sample .ex {
+            padding: 20px;
+        }
+        .sample .ex .text {
+            margin: 10px 0;
+        }
+        .sample .re {
+            padding: 20px;
+            border-top: 1px solid #e6e6e6;
+        }
+        .sample .re a {
+            color: #333;
+            text-decoration: none;
+            border: 1px solid #333;
+            border-radius: 30px;
+            padding: 10px 30px;
+            margin: 5px;
+            display: inline-block;
+        }
+        .sample .re a:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* option */
+        .ex1 {
+            overflow: hidden;
+        }
+        .ex1 > div {
+            float: left;
+            width: 18%;
+            margin: 1%;
+            border: 5px solid transparent;
+            box-sizing: border-box;
+        }
+        .ex1 > div img {
+            width: 100%;
+            margin: 0;
+        }
+        .ex1 > div.selected {
+            border: 5px solid #7d0f2a;
+            position: relative;
+            box-sizing: border-box;
+            border-radius: 10px;
+            background: #b02b4c;
+        }
+        .ex1 > div.selected img {
+            opacity: 0.2;
+        }
+        .ex1 > div.selected::before {
+            content: 'selected';
+            position: absolute;
+            left: 50%; top: 50%;
+            color: #fff;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+        }
+
+        /* sample2 */
+        .ex2 {
+            overflow: hidden;
+        }
+        .ex2 > div {
+            float: left;
+            width: 18%;
+            margin: 1%;
+            border: 5px solid transparent;
+            box-sizing: border-box;
+        }
+        .ex2 > div img {
+            width: 100%;
+            margin: 0;
+        }
+        .ex2 > div.selected {
+            border: 5px solid #7d0f2a;
+            position: relative;
+            box-sizing: border-box;
+            border-radius: 10px;
+            background: #b02b4c;
+        }
+        .ex2 > div.selected img {
+            opacity: 0.2;
+        }
+        .ex2 > div.selected::before {
+            content: 'selected';
+            position: absolute;
+            left: 50%; top: 50%;
+            color: #fff;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+        }
+
+        /* sample3 */
+        .ex3 {
+            overflow: hidden;
+        }
+        .ex3 > div {
+            float: left;
+            width: 18%;
+            margin: 1%;
+            border: 5px solid transparent;
+            box-sizing: border-box;
+        }
+        .ex3 > div img {
+            width: 100%;
+            margin: 0;
+        }
+        .ex3 > div.selected {
+            border: 5px solid #7d0f2a;
+            position: relative;
+            box-sizing: border-box;
+            border-radius: 10px;
+            background: #b02b4c;
+        }
+        .ex3 > div.selected img {
+            opacity: 0.2;
+        }
+        .ex3 > div.selected::before {
+            content: 'selected';
+            position: absolute;
+            left: 50%; top: 50%;
+            color: #fff;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+        }
+
+        /* sample4 */
+        #tab-menu {
+            width: 50%;
+            margin: 50px auto;
+        }
+        #tab-btn {
+            background: #ccc;
+        }
+        #tab-btn ul {
+            overflow: hidden;
+        }
+        #tab-btn li {
+            float: left;
+            width: 20%;
+            text-align: center;
+        }
+        #tab-btn li a {
+            padding: 20px 5px;
+            display: block;
+            background-color: #b02b4c;
+            color: #fff;
+            font-size: 13px;
+        }
+        #tab-btn li a:hover {
+            opacity: 0.8;
+        }
+        #tab-img {
+            min-height: 400px;
+        }
+        #tab-img.img1 {
+            background: url(img/images15.jpg);
+            background-size: cover;
+        }
+        #tab-img.img2 {
+            background: url(img/images16.jpg);
+            background-size: cover;
+        }
+        #tab-img.img3 {
+            background: url(img/images17.jpg);
+            background-size: cover;
+        }
+        #tab-img.img4 {
+            background: url(img/images18.jpg);
+            background-size: cover;
+        }
+        #tab-img.img5 {
+            background: url(img/images14.jpg);
+            background-size: cover;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>JavaScript classList</h1>
+
+    <div id="sample1" class="sample">
+        <h2>Sample01 : 이미지 선택하기 : classList.add / classList.remove<span class="dot"></span></h2>
+        <div class="ex ex1">
+            <div><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover02.jpg" alt="샘플이미지1"></div>
+            <div><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover03.jpg" alt="샘플이미지2"></div>
+            <div><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지3"></div>
+            <div><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="샘플이미지4"></div>
+            <div><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover06.jpg" alt="샘플이미지5"></div>
+        </div>
+        <div class="re">
+            <a href="#c" class="btn1-0">리셋</a>
+            <a href="#c" class="btn1-1">클릭 : 이미지 선택합니다.</a>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample2" class="sample">
+        <h2>Sample02 : 이미지 클릭하여 선택하기 : classList.toggle<span class="dot"></span></h2>
+        <div class="ex ex2">
+            <div><a href="#c"><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover07.jpg" alt="샘플이미지1"></a></div>
+            <div><a href="#c"><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover08.jpg" alt="샘플이미지2"></a></div>
+            <div><a href="#c"><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover09.jpg" alt="샘플이미지3"></a></div>
+            <div><a href="#c"><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover10.jpg" alt="샘플이미지4"></a></div>
+            <div><a href="#c"><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover11.jpg" alt="샘플이미지5"></a></div>
+        </div>
+        <div class="re">
+            <a href="#c" class="btn2-0">리셋</a>
+            <a href="#c">이미지를 클릭하세요!!</a>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample3" class="sample">
+        <h2>Sample03 : 클래스 검색하기 : hasClass()<span class="dot"></span></h2>
+        <div class="ex ex3" id="ddd">
+            <div><a href="#c"><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover12.jpg" alt="샘플이미지1"></a></div>
+            <div><a href="#c"><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover13.jpg" alt="샘플이미지2"></a></div>
+            <div class="selected"><a href="#c"><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover14.jpg" alt="샘플이미지3"></a></div>
+            <div><a href="#c"><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover15.jpg" alt="샘플이미지4"></a></div>
+            <div class="selected"><a href="#c"><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover16.jpg" alt="샘플이미지5"></a></div>
+        </div>
+        <div class="re">
+            <a href="#c" class="btn3-0">리셋</a>
+            <a href="#c" class="btn3-1">클릭 : selected 클래스 찾은 후 클래스를 제거합니다.</a>
+        </div>
+    </div>
+
+    <hr>
+
+    
+    <script>
+        //sample01
+        document.querySelector(".btn1-0").addEventListener("click", function(){
+            document.querySelectorAll(".ex1 > div").forEach(el => {
+                el.classList.remove("selected");
+            })
+        });
+        document.querySelector(".btn1-1").addEventListener("click", function(){
+            //document.querySelector(".ex1 > div").classList.add("selected");
+            document.querySelectorAll(".ex1 > div").forEach(el => {
+                el.classList.add("selected");
+            })
+        });
+
+        //sample02
+        document.querySelectorAll(".ex2 > div").forEach(el => {
+            el.addEventListener("click", function(){
+                el.classList.toggle("selected");
+            });
+        });
+
+        //sample03
+        document.getElementById("ddd").addEventListener("click", function(){
+
+            var x = document.getElementById("ddd");
+
+            if (x.classList.contains("selected")) {
+                x.classList.remove("selected");
+            } else {
+                x.classList.add("selected");
+            }
+
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>포트폴리오</title>
+    <link rel="stylesheet" href="css/font-awesome.css">
+
+    <style>
+        @font-face {
+            font-family: 'S-CoreDream-3Light';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'S-CoreDream-3Light';
+        }
+
+        body {
+            font-size: 0.894rem;
+            background: #f2f3f8;
+            color: #4e5155;
+        }
+
+        a {
+            color: #f1f1f1;
+            text-decoration: none;
+        }
+
+        #sidenav {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background-color: #2c2e3e;
+            width: 13.625rem;
+        }
+
+        .brand {
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            margin-bottom: 0.75rem
+        }
+
+        .brand h1 {
+            height: 63px;
+            line-height: 63px;
+            font-weight: normal;
+            font-size: 1rem;
+            padding-right: 1.45rem;
+            padding-left: 1.45rem;
+            color: #fff;
+        }
+
+        #contents {
+            padding-left: 13.625rem;
+            height: 100vh;
+            font-family: 'Malgun Gothic', '맑은고딕';
+        }
+
+        .navbar {
+            background-color: #fff;
+            color: #4E5155;
+            box-shadow: 0 1px 15px 1px rgba(62, 57, 107, 0.07);
+            padding: 1.5rem 2rem;
+        }
+
+        .sidenav-inner {}
+
+        .sidenav-inner li {
+            padding: 0.75rem 1.7rem;
+            color: #9B9CA5;
+        }
+
+        .sidenav-inner li.active {
+            text-decoration: underline;
+        }
+
+        .container {
+            padding: 2rem;
+        }
+
+        .container h2 {
+            font-size: 1.313rem;
+            padding-bottom: 0.75rem;
+            font-weight: normal;
+        }
+
+        .container h3 {
+            font-size: 1.113rem;
+            padding-bottom: 0.75rem;
+            padding-top: 2rem;
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+
+        .container h4 {
+            padding-bottom: 0.75rem;
+        }
+
+        .container .card {
+            width: 100%;
+            height: 150px;
+            padding-right: 0.75rem;
+            padding-left: 0.75rem;
+            background: #fff;
+            box-shadow: 0 10px 30px 0 rgba(24, 28, 33, 0.04);
+        }
+
+        .container .table {
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 10px 30px 0 rgba(24, 28, 33, 0.04);
+            padding: 1.3rem 1.5rem;
+        }
+
+        .container .table table {
+            width: 100%;
+            border-top: 1px solid #f1f1f2;
+            border-spacing: 0px;
+            border-collapse: collapse;
+        }
+
+        .container .table table a {
+            color: #4E5155;
+            text-decoration: underline;
+        }
+
+        .container .table table a:visited {
+            color: #4578bd;
+        }
+
+        .container .table table th {
+            border-bottom: 2px solid #f1f1f2;
+            padding: 14px 10px 10px 10px;
+            text-align: left
+        }
+
+        .container .table table td {
+            border-bottom: 1px solid #f1f1f2;
+            padding: 14px 10px 10px 10px;
+        }
+
+        .container .table table th:nth-child(1) {
+            text-align: center;
+        }
+
+        .container .table table td:nth-child(1) {
+            text-align: center;
+        }
+
+        .container .table table tr:hover {
+            background: #f1f1f1;
+        }
+
+        .container .table .ce {
+            text-align: center;
+        }
+
+        .container .table .red {
+            background: rgb(33, 64, 129);
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="inner">
+            <div id="sidenav">
+                <div class="brand">
+                    <h1>국비 지원</h1>
+                </div>
+                <ul class="sidenav-inner">
+                    <li><a href="#">포트폴리오 1기</a></li>
+                    <li><a href="#">포트폴리오 2기</a></li>
+                    <li><a href="#">포트폴리오 3기</a></li>
+                    <li class="active"><a href="index2.html">포트폴리오 4기</a></li>
+                    <li class="active"><a href="index3.html">숙제검사 4기</a></li>
+                </ul>
+            </div>
+            <div id="contents">
+                <div class="navbar">JAVA기반 스마트웹 개발 전문가 양성A</div>
+                <div class="container">
+
+                    <h3>숙제검사</h3>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width:5%">
+                                <col style="width:7%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="ce">번호</th>
+                                    <th class="ce">이름</th>
+                                    <th class="ce">1</th>
+                                    <th class="ce">2</th>
+                                    <th class="ce">3</th>
+                                    <th class="ce">4</th>
+                                    <th class="ce">5</th>
+                                    <th class="ce">6</th>
+                                    <th class="ce">7</th>
+                                    <th class="ce">8</th>
+                                    <th class="ce">9</th>
+                                    <th class="ce">10</th>
+                                    <th class="ce">11</th>
+                                    <th class="ce">12</th>
+                                    <th class="ce">14</th>
+                                    <th class="ce">15</th>
+                                    <th class="ce">16</th>
+                                    <th class="ce">17</th>
+                                    <th class="ce">18</th>
+                                    <th class="ce">19</th>
+                                    <th class="ce">20</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="ce">1</td>
+                                    <td class="ce">김도연</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">2</td>
+                                    <td class="ce">김도연</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">3</td>
+                                    <td class="ce">김민경</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">4</td>
+                                    <td class="ce">김민지</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">5</td>
+                                    <td class="ce">김예진</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">6</td>
+                                    <td class="ce">김은영</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">7</td>
+                                    <td class="ce">김진석</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">8</td>
+                                    <td class="ce">문진서</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">9</td>
+                                    <td class="ce">박소민</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">10</td>
+                                    <td class="ce">박진용</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">11</td>
+                                    <td class="ce">박현태</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">12</td>
+                                    <td class="ce">양희교</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">13</td>
+                                    <td class="ce">오수인</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">14</td>
+                                    <td class="ce">유승재</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">15</td>
+                                    <td class="ce">이도연</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">16</td>
+                                    <td class="ce">이창민</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">17</td>
+                                    <td class="ce">이학진</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">18</td>
+                                    <td class="ce">정범수</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">19</td>
+                                    <td class="ce">정예원</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">20</td>
+                                    <td class="ce">조재형</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">21</td>
+                                    <td class="ce">조하연</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">22</td>
+                                    <td class="ce">조혜선</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">23</td>
+                                    <td class="ce">진재현</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">24</td>
+                                    <td class="ce">최유림</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">25</td>
+                                    <td class="ce">한연정</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">26</td>
+                                    <td class="ce">한영아</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">27</td>
+                                    <td class="ce">홍인영</td>
+                                    <td class="ce red">O</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">28</td>
+                                    <td class="ce">홍창의</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                    <td class="ce">X</td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        html,
+        body {
+          position: relative;
+          height: 100%;
+            background: #fff;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        body {
+          background: #eee;
+          font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+          font-size: 14px;
+          color: #000;
+          margin: 0;
+          padding: 0;
+        }
+        img {
+            width: 100%;
+        }
+        
+        #wrap {
+            width: 375px;
+            margin: 0 auto;
+        }
+        
+        
+        header {
+            position: relative;
+            width: 375px;
+            height: 80px;
+            background: #fff;
+            z-index: 1000;
+        }
+        header h1 {
+            position: absolute;
+            left: 20px;
+            top: 5px;
+            width: 160px;
+        }
+        header nav {
+            width: 80px;
+            position: absolute;
+            right: 20px; top: 23px;
+        }
+        
+        
+        
+        .swiper-container {
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto;
+            height: 732px;
+        }
+        .swiper-slide {
+            position: relative;
+        }
+        .swiper-slide::after {
+            content: '';
+            width: 100%;
+            height: 200px;
+            background: #fff;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+        
+    
+        .swiper-slide.s1 {
+            background-image: url(18@3x.png);
+            background-size: 310px;
+            background-position: top right;
+            background-repeat: no-repeat;
+        }
+        .swiper-slide.s2 {
+            background-image: url(17@3x.png);
+            background-size: cover;
+            background-size: 310px;
+            background-position: top right;
+            background-repeat: no-repeat;
+        }
+        .swiper-slide.s3 {
+            background-image: url(16@3x.png);
+            background-size: cover;
+            background-size: 310px;
+            background-position: top right;
+            background-repeat: no-repeat;
+        }
+        
+        .swiper-slide .txt {
+            position: absolute;
+            left: 0; bottom: 0px;
+            width: 307px;
+            background: #fff;
+            padding: 0 60px 50px 65px;
+            box-sizing: border-box;
+            z-index: 1000;
+            opacity: 0;
+            transition: all 0.3s 0.1s ease;
+        }
+        
+        .swiper-slide .txt h2 {
+            font-size: 38px;
+            line-height: 1.1;
+            margin: 0;
+            padding: 30px 0 0 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.3s 0.4s ease-in-out;
+        }
+        .swiper-slide .txt p {
+            font-size: 18px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s 0.6s ease-in-out;
+        }
+        .swiper-slide .txt span {
+            font-size: 14px;
+            display: block;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s 0.9s ease-in-out;
+        }
+        .swiper-slide .txt em {
+            display: block;
+            opacity: 1;
+            width: 30px;
+            margin-top: 50px;
+            margin-left: -3px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s 1.2s ease-in-out;
+        }
+        
+        .swiper-slide.swiper-slide-active .txt {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .swiper-slide.swiper-slide-active .txt h2 {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .swiper-slide.swiper-slide-active .txt p {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .swiper-slide.swiper-slide-active .txt span {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .swiper-slide.swiper-slide-active .txt em {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .swiper-slide .bar {
+            position: absolute;
+            left: 38px;
+            top: 111px;
+            width: 1px;
+            height: 120px;
+            background: #9e8b6a;
+            z-index: 100000;
+        }
+        .swiper-slide .bar span {
+            width: 1px;
+            height: 0;
+            background: #000;
+            position: absolute;
+            left: 0; bottom: 0;
+            transition: height 6s 
+        }
+        .swiper-slide.swiper-slide-active .bar span {
+            height: 100%;
+        }
+        
+        .swiper-container {
+            background: #fff;
+        }
+        
+        .swiper-pagination-fraction {
+            width: 65px;
+            height: 431px;
+            top: -31px;
+        }
+        .swiper-pagination-current {
+            position: absolute;
+            left: 34px;
+            top: 77%;
+            transform: translateY(-45px);
+            font-size: 16px;
+            color: #9B8B6E;
+        }
+        .swiper-pagination-current::after {
+            content: '/';
+            position: absolute;
+            left: 0;
+            bottom: -23px;
+        }
+        .swiper-pagination-total {
+            position: absolute;
+            left: 34px;
+            top: 77%;
+            font-size: 16px;
+            color: #9B8B6E;
+        }
+        
+  </style>
+    
+</head>
+<body>
+    
+    
+    
+    <div id="wrap">
+        <header>
+            <h1><img src="logo.png" alt=""></h1>
+            <nav><img src="menu.png" alt=""></nav>
+        </header>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide s1">
+                    <div class="txt">
+                        <h2>스트로베리<br>블라썸</h2>
+                        <p>상콤 달콤 딸기와 썸타기</p>
+                        <span>2021. 03. 31</span>
+                        <em><img src="arr.png" alt=""></em>
+                    </div>
+                    <div class="bar"><span></span></div>
+                </div>
+                <div class="swiper-slide s2">
+                    <div class="txt">
+                        <h2>스트로베리<br>블라썸</h2>
+                        <p>상콤 달콤 딸기와 썸타기</p>
+                        <span>2021. 03. 31</span>
+                        <em><img src="arr.png" alt=""></em>
+                    </div>
+                    <div class="bar"><span></span></div>
+                </div>
+                <div class="swiper-slide s3">
+                    <div class="txt">
+                        <h2>스트로베리<br>블라썸</h2>
+                        <p>상콤 달콤 딸기와 썸타기</p>
+                        <span>2021. 03. 31</span>
+                        <em><img src="arr.png" alt=""></em>
+                    </div>
+                    <div class="bar"><span></span></div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            
+        </div>
+    </div>
+    
+    
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'fraction',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            
+        });
+    </script>
+</body>
+</html>

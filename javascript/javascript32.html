@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+    <script>
+        //let var const
+        const obj1 = new Object(); //객체 선언
+        obj1[0] = 100;
+        obj1[1] = 200;
+        obj1[2] = "javascript";
+
+        document.write(obj1[0],"<br>");
+        document.write(obj1[1],"<br>");
+        document.write(obj1[2],"<br><br>");
+
+        const obj2 = new Object(); //객체 선언
+        obj2.a = 100;
+        obj2.b = 200;
+        obj2.c = "javascript";
+
+        document.write(obj2.a,"<br>");
+        document.write(obj2.b,"<br>");
+        document.write(obj2.c,"<br><br>");
+
+        const obj3 = {}
+        obj3.a = 100;
+        obj3.b = 200;
+        obj3.c = "javascript";
+
+        document.write(obj3.a,"<br>");
+        document.write(obj3.b,"<br>");
+        document.write(obj3.c,"<br><br>");
+
+        //
+        const obj4 = {
+            a: 100,
+            b: 200,
+            c: "javascript"
+        }
+
+        document.write(obj4.a,"<br>");
+        document.write(obj4.b,"<br>");
+        document.write(obj4.c,"<br><br>");
+
+        //객체(배열 속에 객체)
+        const obj5 = [
+            {
+                a: 100,
+                b: 200
+            },
+            {
+                c: "javascript",
+                d: "jquery"
+            }
+        ];
+        document.write(obj5[0].a,"<br>");
+        document.write(obj5[0].b,"<br>");
+        document.write(obj5[1].c,"<br>");
+        document.write(obj5[1].d,"<br><br>");
+
+        //객체(객체 속에 배열)
+        const obj6 = {
+            a: 100,
+            b: [200, 300],
+            c: "javascript",
+            d: "jquery"
+        }
+        document.write(obj6.a,"<br>");
+        document.write(obj6.b,"<br>");
+        document.write(obj6.b[0],"<br>");
+        document.write(obj6.b[1],"<br>");
+        document.write(obj6.c,"<br>");
+        document.write(obj6.d,"<br><br>");
+
+        //객체(객체 속에 변수)
+        const a = 100;
+        const b = 200;
+        const c = "javascript"
+
+        const obj7 = { a, b, c }
+
+        document.write(obj7.a,"<br>");
+        document.write(obj7.b,"<br>");
+        document.write(obj7.c,"<br><br>");
+
+        //객체(객체 속에 함수)
+        const obj8 = {
+            a: 100,
+            b: [200,300],
+            c: "javascript",
+            d: function(){
+                document.write("자바스크립트가 실행되었습니다.");
+            },
+            e: function(){
+                document.write( this.c + "가 실행되었습니다.");
+            }
+        }
+        document.write(obj8.a, "<br>");
+        document.write(obj8.b, "<br>");
+        document.write(obj8.b[0], "<br>");
+        document.write(obj8.b[1], "<br>");
+        document.write(obj8.c, "<br>");
+        obj8.d();
+        obj8.e();
+
+        document.write("<br><br>");
+
+        //객체 생성자 함수
+        function obj9(a, b){
+            this.a = a; 
+            this.b = b;
+            this.c = function(){
+                document.write("자바스크립트가 실행되었습니다.<br>");
+            };
+            this.d = function(){
+                document.write(this.a + this.b);
+            }
+
+        }
+        const result1 = new obj9(100, 200);
+        const result2 = new obj9("javascript", "jquery");
+
+        document.write(result1.a, "<br>");
+        document.write(result1.b, "<br>");
+        document.write(result2.a, "<br>");
+        document.write(result2.b, "<br>");
+        result1.c();
+        result2.c();
+        result1.d();
+        result2.d();
+
+    </script>
+</body>
+</html>

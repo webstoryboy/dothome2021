@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        li {list-style: none;}
+        a {text-decoration: none; color: #000;}
+        a:hover {text-decoration: none;}
+
+        /* header */
+        #header {
+            position: fixed;
+            left: 0; top: 0;
+            width: 100%; height: 100px;
+            z-index: 3000;
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #header .nav {
+            flex: 0 0 30%;
+            padding-left: 100px;
+        }
+        #header .nav li {
+            display: inline;
+        }
+        #header .nav li a {
+            font-family: 'Roboto';
+            font-style: 14px;
+            padding-right: 10px;
+        }
+        #header .nav li.active a {
+            font-weight: bold;
+        }
+        #header h1 {
+            flex: 0 0 40%;
+            text-align: center;
+            font-family: 'Roboto';
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+        }
+        #header .hamNav {
+            flex: 0 0 30%;
+            text-align: right;
+            padding-right: 90px;
+        }
+        #header .hamNav .ham {
+            display: inline-block;
+            width: 50px; height: 50px;
+            position: relative;
+            transition: all 0.5s ease;
+        }
+        #header .hamNav .ham span {
+            display: block;
+            position: absolute;
+            left: 10px; top: 25px;
+            width: 30px; height: 3px;
+            background: #000;
+        }
+        #header .hamNav .ham span::before {
+            content: '';
+            position: absolute;
+            top: -10px; left: 0;
+            width: 50%; height: 3px;
+            background: #000;
+            transform-origin: left;
+        }
+        #header .hamNav .ham span::after {
+            content: '';
+            position: absolute;
+            bottom: -10px; right: 0;
+            width: 50%; height: 3px;
+            background: #000;
+            transform-origin: right;
+        }
+        #header .hamNav .ham.active {
+            transform: rotate(135deg);
+        }
+        #header .hamNav .ham.active span::before {
+            top: 0; transform: translateX(100%) rotate(-90deg);
+        }
+        #header .hamNav .ham.active span::after {
+            bottom: 0; transform: translateX(-100%) rotate(-90deg);
+        }
+
+        /* slider */
+        .slider-wrap {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .slider-img {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+        }
+        .slider-img .slider {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .slider-img .slider:nth-child(1){
+            background: #fcefe9;
+        }
+        .slider-img .slider:nth-child(2){
+            background: #e9effd;
+        }
+        .slider-img .slider:nth-child(3){
+            background: #fae3f5;
+        }
+        .slider-img .slider:nth-child(4){
+            background: #fbe368;
+        }
+        .slider-img .slider:nth-child(5){
+            background: #ccebfa;
+        }
+        .slider-img .slider:nth-child(6){
+            background: #e9effd;
+        }
+        .slider-img .slider:nth-child(7){
+            background: #f4f2ec;
+        }
+
+        /* slider */
+        .slider {
+
+        }
+        .slider .slider_text {
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-align: center;
+            font-size: 8vw;
+            line-height: 6vw;
+            color:#fff;
+            font-family: 'Poppins';
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 700;
+            overflow: hidden;
+        }
+        .slider .slider_img {
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+        }
+        .slider .slider_img img {
+            max-width: 500px;
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+        .slider .slider_count {
+            position: absolute;
+            left: 130px; top: 100px;
+            font-size: 90px;
+            font-style: italic;
+            font-family: 'Playfair Display';
+        }
+        .slider .slider_count::before {
+            content: '';
+            width: 110%; height: 80%;
+            position: absolute;
+            left: 0; top: 30px;
+        }
+        .slider .slider_count span {
+            position: relative;
+        }
+        .slider .slider_count span:first-child {
+            margin-right: 76px;
+        }
+        .slider .slider_count span:first-child::before {
+            content: '';
+            position: absolute;
+            right: -80px;
+            bottom: 45px;
+            width: 60px;
+            height: 1px;
+            background: #000;
+        }
+
+        /* slider-nav */
+        .slider-nav a {
+            position: absolute;
+            width: 100px;
+            height: 100vh;
+            bottom: 0;
+            z-index: 2000;
+            background: #fff;
+        }
+        .slider-nav a svg {
+            width: 18px; height: 18px;
+            position: absolute;
+        }
+        .slider-nav a.prev {
+            left: 0;
+        }
+        .slider-nav a.prev svg {
+            left: 0;
+            bottom: 40px;
+            margin: 45px 0 0 40px;
+            transform: rotate(45deg);
+        }
+        .slider-nav a.next {
+            right: 0;
+        }
+        .slider-nav a.next svg {
+            right: 0;
+            bottom: 40px;
+            margin: 40px 50px 0 40px;
+            transform: rotate(-135deg);
+        }
+
+        /* slider-dot */
+        .slider-dot {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            bottom: 0;
+            height: 100px;
+            background: #fff;
+            z-index: 1000;
+            text-align: center;
+        }
+        .slider-dot a {
+            display: inline-block;
+            width: 10px; height: 10px;
+            line-height: 9px;
+            border-radius: 50%;
+            border: 1px solid rgb(211, 211, 211);
+            color: #000;
+            font-family: 'Roboto';
+            font-style: italic;
+            font-size: 12px;
+            font-weight: bold;
+            text-indent: -9999px;
+            margin: 50px 15px;
+        }
+        .slider-dot a.active {
+            border: 0;
+            color: #333;
+            text-indent: 0px;
+        }
+
+        /* slider Animation */
+        .slider .slider_text span {
+            display: inline-block;
+            transform: translate(0, 200px);
+            transition: all 0.8s cubic-bezier(0, 0.35, 0, 1.02);
+        }
+        .slider .slider_img img {
+            transform: scale(0);
+            transition: all 0.5s cubic-bezier(0, 0.35, 0, 1.02);
+        }
+        .slider .slider_count {
+            opacity: 0;
+        }
+        .slider .slider_count::before {
+            transform-origin: left;
+            background: #fff;
+            z-index: 10;
+        }
+
+        .slider.active .slider_count {
+            animation: revealText 0.1s 1.3s forwards;
+        }
+        .slider.active .slider_count::before {
+            animation: reveal 0.7s 1s ease forwards;
+        }
+        @keyframes reveal {
+            0%   {transform: scaleX(0); transform-origin: left;}
+            40%  {transform: scaleX(1); transform-origin: left;}
+            61%  {transform: scaleX(1); transform-origin: right;}
+            100% {transform: scaleX(0); transform-origin: right;}
+        }
+        @keyframes revealText {
+            0%   {opacity: 0;}
+            100% {opacity: 1;}
+        }
+
+
+        .slider.active .slider_img img {
+            transform: scale(1.4);
+        }
+        .slider.active .slider_text span {
+            transform: translate(0, 0);
+        }
+        .slider.active .slider_text span:nth-child(1) {transition-delay: 0.05s;}
+        .slider.active .slider_text span:nth-child(2) {transition-delay: 0.10s;}
+        .slider.active .slider_text span:nth-child(3) {transition-delay: 0.15s;}
+        .slider.active .slider_text span:nth-child(4) {transition-delay: 0.20s;}
+        .slider.active .slider_text span:nth-child(5) {transition-delay: 0.25s;}
+        .slider.active .slider_text span:nth-child(6) {transition-delay: 0.30s;}
+        .slider.active .slider_text span:nth-child(7) {transition-delay: 0.35s;}
+        .slider.active .slider_text span:nth-child(8) {transition-delay: 0.40s;}
+        .slider.active .slider_text span:nth-child(9) {transition-delay: 0.45s;}
+        .slider.active .slider_text span:nth-child(10) {transition-delay: 0.50s;}
+        .slider.active .slider_text span:nth-child(11) {transition-delay: 0.55s;}
+        
+    </style>
+</head>
+<body>
+    <div class="cursor"></div><!-- //cursor -->
+
+    <header id="header">
+        <nav class="nav">
+            <ul>
+                <li class="active"><a href="#">Works</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <h1>portfolio</h1>
+        <div class="hamNav">
+            <a href="#" class="ham"><span></span></a>
+        </div>
+    </header>
+    <!-- //header -->
+
+    <main>
+        <div class="slider-wrap">
+            <div class="slider-img">
+                <div class="slider">
+                    <div class="slider_text split">portfolio</div>
+                    <figure class="slider_img">
+                        <img src="img/slider-img1.png" alt="웹표준">
+                    </figure>
+                    <div class="slider_count">
+                        <span class="sliderNumber">07</span>
+                        <span class="sliderTotal">01</span>
+                    </div>
+                </div>
+                <div class="slider">
+                    <div class="slider_text split">Webstandard</div>
+                    <figure class="slider_img">
+                        <img src="img/slider-img2.png" alt="반응형">
+                    </figure>
+                    <div class="slider_count">
+                        <span class="sliderNumber">07</span>
+                        <span class="sliderTotal">01</span>
+                    </div>
+                </div>
+                <div class="slider">
+                    <div class="slider_text split">responsive</div>
+                    <figure class="slider_img">
+                        <img src="img/slider-img3.png" alt="이미지1">
+                    </figure>
+                    <div class="slider_count">
+                        <span class="sliderNumber">07</span>
+                        <span class="sliderTotal">01</span>
+                    </div>
+                </div>
+                <div class="slider">
+                    <div class="slider_text split">responsive</div>
+                    <figure class="slider_img">
+                        <img src="img/slider-img4.png" alt="이미지1">
+                    </figure>
+                    <div class="slider_count">
+                        <span class="sliderNumber">07</span>
+                        <span class="sliderTotal">01</span>
+                    </div>
+                </div>
+                <div class="slider">
+                    <div class="slider_text split">responsive</div>
+                    <figure class="slider_img">
+                        <img src="img/slider-img1.png" alt="이미지1">
+                    </figure>
+                    <div class="slider_count">
+                        <span class="sliderNumber">07</span>
+                        <span class="sliderTotal">01</span>
+                    </div>
+                </div>
+                <div class="slider">
+                    <div class="slider_text split">responsive</div>
+                    <figure class="slider_img">
+                        <img src="img/slider-img2.png" alt="이미지1">
+                    </figure>
+                    <div class="slider_count">
+                        <span class="sliderNumber">07</span>
+                        <span class="sliderTotal">01</span>
+                    </div>
+                </div>
+                <div class="slider">
+                    <div class="slider_text split">portfolio</div>
+                    <figure class="slider_img">
+                        <img src="img/slider-img3.png" alt="">
+                    </figure>
+                    <div class="slider_count">
+                        <span class="sliderNumber">07</span>
+                        <span class="sliderTotal">01</span>
+                    </div>
+                </div>
+            </div>
+            <!-- //slider-img -->
+
+            <div class="slider-nav">
+                <a href="#" class="prev">
+                    <svg viewBox="-1 -2 18 18">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3.26849658e-13,8.84328471 L3.26849658e-13,-4.19220214e-13" stroke="#444444" stroke-width="2"></path>
+                            <path d="M2.27373675e-13,8.84328471 L8.84328471,8.84328471" stroke="#444444" stroke-width="2"></path>
+                        </g>
+                    </svg>
+                </a>
+                <a href="#" class="next">
+                    <svg viewBox="-1 -2 18 18">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3.26849658e-13,8.84328471 L3.26849658e-13,-4.19220214e-13" stroke="#444444" stroke-width="2"></path>
+                            <path d="M2.27373675e-13,8.84328471 L8.84328471,8.84328471" stroke="#444444" stroke-width="2"></path>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+            <!-- //slider-nav -->
+
+            <div class="slider-dot">
+                <!-- <a href="#" class="active">01</a>
+                <a href="#">02</a>
+                <a href="#">03</a>
+                <a href="#">04</a>
+                <a href="#">05</a>
+                <a href="#">06</a>
+                <a href="#">07</a> -->
+            </div>
+            <!-- //slider-dot -->
+        </div>
+    </main>
+    <!-- //main -->
+
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        var sliderWrap = $(".slider-wrap"),
+            sliderImg = $(".slider-img"),
+            slider = $(".slider"),
+            sliderNav = $(".slider-nav"),
+            sliderDot = $(".slider-dot"),
+            sliderCount = $(".slider_count"),
+            sliderNumber = sliderCount.find(".sliderNumber"),
+            sliderTotal = sliderCount.find(".sliderTotal");
+            
+        var dotHTML = "",
+            currentIndex = 0,
+            duration = 1000,
+            easing = "easeOutExpo",
+            sliderLength = slider.length,
+            sliderTimer = "",
+            interval = 300000000;
+            
+        //이미지 위치 설정, 닷 메뉴 설정
+        slider.each(function(index){
+            $(this).css({ "left": 100*index+"%" });
+
+            dotHTML += "<a href='#'>0"+ (index+1) +"</a>";
+        });
+        sliderDot.html(dotHTML);
+
+        //이미지 움직이기
+        function gotoSlider(num){
+            sliderImg.stop().animate({ "left": num*-100+"%"}, duration, easing);
+            currentIndex = num;
+            gotoActive();
+        }
+
+        //활성화 표시하기
+        function gotoActive(){
+            slider.removeClass("active").eq(currentIndex).addClass("active");
+            sliderDot.find("a").removeClass("active").eq(currentIndex).addClass("active");
+            sliderNumber.text("0" + (currentIndex + 1));
+            sliderTotal.text("0" + sliderLength);
+        }
+
+        //버튼 클릭하기
+        sliderNav.on("click","a",function(e){
+            e.preventDefault();
+
+            var nextIndex = (currentIndex + 1) % sliderLength;
+            var prevIndex = (currentIndex - 1) % sliderLength;
+            if( currentIndex == 0 ) prevIndex = sliderLength - 1;
+
+            if( $(this).hasClass("prev") ){
+                gotoSlider(prevIndex);
+            } else {
+                gotoSlider(nextIndex);
+            }
+        });
+
+        //닷 버튼 클릭하기
+        sliderDot.on("click","a",function(e){
+            e.preventDefault();
+            if( !$(this).hasClass("active") ){
+                gotoSlider( $(this).index() );
+            }
+        });
+
+        //자동 플레이
+        function startTimer(){
+            sliderTimer = setInterval(function(){
+                var intervalNum = (currentIndex + 1) % sliderLength;
+                gotoSlider(intervalNum);
+            }, interval);
+        }
+
+        function stopTimer(){
+            clearInterval(sliderTimer)
+        }
+
+        sliderWrap.on({mouseenter: stopTimer, mouseleave: startTimer});
+
+        //글씨 쪼개기
+        $(".split").each(function(){
+            var text = $(this).text();
+            let split = text.split("").join("</span><span aria-hidden='true'>");
+                split = "<span aria-hidden='true'>" + split + "</span>";
+            $(this).html(split).attr("aria-label", text);
+        });
+
+        //바로 시작하기
+        gotoSlider(currentIndex);
+        startTimer();
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ball {
+            width: 100px;
+            height: 100px;
+            background: dodgerblue;
+            border-radius: 50%;
+            margin: 10px 0;
+            will-change: transform;
+        }
+    </style>
+</head>
+<body>
+    <div id="ball1" class="ball"></div>
+    <div id="ball2" class="ball"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+    <script>
+        //최대 값을 초과하면 처음으로 돌아가고 최소값보다 작으면 끝으로 돌아가도록 지정된 범위에 숫자를 배치합니다.
+        
+
+
+        const s1 = gsap.utils.getUnit("30px")
+        console.log(s1)
+
+        const s2 = gsap.utils.interpolate("red", "blue", 0.5)
+        console.log(s2)
+
+        const s3 = gsap.utils.mapRange(-10, 10, 0, 100, 5)
+        console.log(s3)
+
+        const s4 = gsap.utils.random(0, 200, 3)
+        console.log(s4)
+
+        const s5 = gsap.utils.random(["red", "green", "blue"])
+        console.log(s5)
+
+        const s6 = gsap.utils.shuffle([1, 2, 3, 4, 5])
+        console.log(s6)
+
+        //최대 값을 초과하면 처음으로 돌아가고 최소값보다 작으면 끝으로 돌아가도록 지정된 범위에 숫자를 배치합니다.
+        var s7 = gsap.utils.wrap(100, 50, 101);
+        var s7 = gsap.utils.wrap(100, 50, 102);
+        var s7 = gsap.utils.wrap(100, 50, 103);
+        console.log(s7)
+        
+        //12는 최대 값인 10보다 두 개 더 많으므로 시작 부분까지 감싸고 거기에서 두 개 올라갑니다.
+        // 7 (12 is two more than the max of 10, so it wraps around to the start and goes two up from there)
+        var s8 = gsap.utils.wrap(5, 10, 10);  //5
+        var s8 = gsap.utils.wrap(5, 10, 11);  //6
+        var s8 = gsap.utils.wrap(5, 10, 12);  //7
+        var s8 = gsap.utils.wrap(5, 10, 13);  //8
+        var s8 = gsap.utils.wrap(5, 10, 14);  //9
+        var s8 = gsap.utils.wrap(5, 10, 15);  //5
+        var s8 = gsap.utils.wrap(5, 10, 16);  //6
+        var s8 = gsap.utils.wrap(5, 10, 17);  //7
+        var s8 = gsap.utils.wrap(5, 10, 18);  //8
+        var s8 = gsap.utils.wrap(5, 10, 19);  //9
+        var s8 = gsap.utils.wrap(5, 10, 20);  //5
+        console.log(s8)
+
+
+        gsap.defaults({duration:20, ease:"none"});
+
+        var windowWrap = gsap.utils.wrap(0, window.innerWidth);
+            windowYoyo = gsap.utils.wrapYoyo(0, window.innerWidth);
+
+        gsap.to("#ball1", {
+            x: 10000,
+            modifiers: {
+                x: (x, target) => {
+                    var s = gsap.utils.wrap(0, window.innerWidth, parseFloat(x));
+                    return `${s}px`
+                }
+            }
+        });
+        
+        gsap.to("#ball2", {
+            x: 10000,
+            modifiers: {
+                x: x => windowYoyo(parseFloat(x)) + "px"
+            }
+        });
+
+    </script>
+</body>
+</html>

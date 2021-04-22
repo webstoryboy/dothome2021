@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //짝수 홀수 구하기
+
+        //아이디 비밀번호 구분하기
+        let useID = prompt("아이디를 입력하세요!!");
+        let usePW = prompt("비밀번호를 입력하세요~");
+
+        if( useID == "webstoryboy" && usePW == "1234" ){
+            document.write("환영합니다.");
+        } else {
+            document.write("아이디 또는 비밀번호가 틀렸습니다.");
+        }
+
+        //확인하기
+        let conf = confirm("정말로 정말로 회원을 탈퇴할거냐?");
+
+        if( conf ){
+            document.write("그래 탈퇴처리 됐다. 잘가라~~")
+        } else {
+            document.write("탈퇴처리가 최소되었습니다. 굳!!")
+        }
+    </script>
+</body>
+</html>

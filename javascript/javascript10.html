@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+</head>
+<body>
+    <script>
+        //배열
+        const arr1 = new Array();
+        arr1[0] = 100;
+        arr1[1] = 200;
+        arr1[2] = "javascript";
+        
+        //배열2
+        const arr2 = new Array(100, 200, "javascript");
+
+        //배열3
+        const arr3 = [];
+        arr3[0] = 100;
+        arr3[1] = 200;
+        arr3[2] = "javascript";
+        
+        //배열4 
+        const arr4 = [100, 200, "javascript"];
+        
+        //2차 배열
+        const arr5 = [100,200,["javascript","jquery"]];
+        
+        document.write(arr5[0],"<br>")
+        document.write(arr5[1],"<br>")
+        document.write(arr5[2],"<br>")
+        document.write(arr5[2][0],"<br>")
+        document.write(arr5[2][1],"<br>")
+
+        //배열 불러오기(for문)
+        const arr6 = [100,200,300,400,500];
+        
+//        document.write(arr6[0],"<br>");
+//        document.write(arr6[1],"<br>");
+//        document.write(arr6[2],"<br>");
+//        document.write(arr6[3],"<br>");
+//        document.write(arr6[4],"<br>");
+        
+        for( let i=0; i<=4; i++ ){
+            document.write(arr6[i],"<br>");
+        }
+        
+        //배열 불러오기(forEach)
+        const arr7 = [100,200,300,400,500];
+        
+        arr7.forEach(function(elem){
+            document.write(elem,"<br>");
+        });
+        
+        
+        //배열 불러오기(map)
+        
+        //배열 불러오기(for in문)
+        
+        //배열 불러오기(for of문)
+        
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //배열 최댓값 구하기
+        const arr13 = [100, 200, 300, 400, 500];
+        let max;
+
+        for( let i=0; i<arr13.length; i++ ){
+            if( arr13[i] > arr13[0] ) {
+                max = arr13[i]
+            }
+        }
+        document.write(max);
+
+        //배열 Math로 최댓값 구하기
+        const arr14 = [100, 200, 300, 400, 500];
+        let max2 = Math.max(...arr14);
+
+        document.write(max2)
+    </script>
+</body>
+</html>

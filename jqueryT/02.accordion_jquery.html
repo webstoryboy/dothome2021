@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Abel');
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        .accordion {
+            position: absolute;
+            top: 100px;
+            width: 360px;
+            font-size: 14px;
+            font-family: 'Abel';
+        }
+        .accordion.a1 {
+            left: 50px;
+        }
+        .accordion.a2 {
+            left: 500px;
+        }
+        .accordion .link {
+            display: block;
+            background: #3498db;
+            padding: 10px 15px;
+            color: #fff;
+        }
+        .accordion .link:hover {
+            background: #2980b9;
+        }
+        .accordion .link .fa {float: right;}
+        
+        .accordion .desc {
+            background: #444;
+            border-left: 4px solid transparent;
+            padding: 10px 20px;
+            color: #fff;
+        }
+        .accordion .desc {display: none;}
+    </style>
+</head>
+<body>
+   
+    <div class="accordion a1">
+        <ul>
+            <li> 
+                <div class="link">Web Design<i class="fa fa-chevron-down"></i></div>
+                <div class="desc">
+                    1. 에버기븐호 복구작업에 정통한 복수의 소식통은 이날 오전 로이터에 수에즈 운하에 좌초해 일주일째 운하를 가로막고 
+                    있던 에버기븐호가 운하의 양쪽 제방과 평행하게 위치해 ‘정상 항로’로 복귀했다고 전했다.
+                </div>
+            </li>
+            <li>
+                <div class="link">Web Design<i class="fa fa-chevron-down"></i></div>
+                <div class="desc">
+                    2. 앞서 AP통신은 운하 통항 서비스 업체인 레스 에이전시스를 인용, 에버기븐호 일부 부양 소식을 보도했다. 
+                    10척의 예인선과 모래를 빼내기 위한 준설기 등이 동원된 끝에 약간의 돌파구가 마련됐다고 전했다.
+                </div>
+            </li>
+            <li>
+                <div class="link">Web Design<i class="fa fa-chevron-down"></i></div>
+                <div class="desc">
+                    3. 수에즈 운하가 미국 뉴욕의 엠파이어 스테이트 빌딩보다 큰 대형 화물선에 막히면서 화장지, 커피, 가구 등의 
+                    물량 공급 차질이 우려된다. 22만 4000t의 화물선 에버그린사의 에버기븐호는 지난 23일 중국에서 출발해 네덜란드 
+                    로테르담으로 향하던 중 수에즈 운하에서 좌초했다.
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="accordion a2">
+        <ul>
+            <li> 
+                <div class="link">Web Design<i class="fa fa-chevron-down"></i></div>
+                <div class="desc">
+                    1. 에버기븐호 복구작업에 정통한 복수의 소식통은 이날 오전 로이터에 수에즈 운하에 좌초해 일주일째 운하를 가로막고 
+                    있던 에버기븐호가 운하의 양쪽 제방과 평행하게 위치해 ‘정상 항로’로 복귀했다고 전했다.
+                </div>
+            </li>
+            <li>
+                <div class="link">Web Design<i class="fa fa-chevron-down"></i></div>
+                <div class="desc">
+                    2. 앞서 AP통신은 운하 통항 서비스 업체인 레스 에이전시스를 인용, 에버기븐호 일부 부양 소식을 보도했다. 
+                    10척의 예인선과 모래를 빼내기 위한 준설기 등이 동원된 끝에 약간의 돌파구가 마련됐다고 전했다.
+                </div>
+            </li>
+            <li>
+                <div class="link">Web Design<i class="fa fa-chevron-down"></i></div>
+                <div class="desc">
+                    3. 수에즈 운하가 미국 뉴욕의 엠파이어 스테이트 빌딩보다 큰 대형 화물선에 막히면서 화장지, 커피, 가구 등의 
+                    물량 공급 차질이 우려된다. 22만 4000t의 화물선 에버그린사의 에버기븐호는 지난 23일 중국에서 출발해 네덜란드 
+                    로테르담으로 향하던 중 수에즈 운하에서 좌초했다.
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".accordion.a1 .link").click(function () {
+            $(this).toggleClass("active").next().slideToggle();
+        });
+
+        //let thisto = "";
+
+        $(".accordion.a2 .link").click(function () {
+            // if (thisto !=""){
+            //     thisto.toggleClass("active").next().slideToggle();
+            // } 
+            console.log($(this).hasClass("active"));
+            if(!$(this).hasClass("active")){
+                $(this).toggleClass("active").next().slideToggle();
+                thisto = $(this);
+            }
+        });
+    </script>
+</body>
+</html>

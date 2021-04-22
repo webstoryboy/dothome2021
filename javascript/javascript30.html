@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+
+    <script>
+        //for문을 이용해서 1~10까지 출력 
+        for( let i=1; i<=10; i++ ){
+            document.write(i)
+        }
+        document.write("<br><br>");
+
+
+        //중첩 for문
+        for( let i=1; i<=10; i++ ){
+            for ( let j=1; j<=10; j++ ){
+                document.write(i, j, "<br>");
+            }
+        }
+
+        //구구단
+        //i = 2 ~ 9 
+        //j = 1 ~ 9
+        //i * j = sum
+        for (let i=2; i<=9; i++){
+            for (let j=1; j<=9; j++){
+                let sum = i * j
+                document.write( i + "*" + j + "=" + sum );
+                document.write("<br>");
+            }
+        }
+
+        //table
+
+
+    </script>
+</body>
+</html>

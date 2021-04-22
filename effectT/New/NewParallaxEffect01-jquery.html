@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Effect01 - jQuery</title>
+
+    <link rel="stylesheet" href="skin/prism.css">
+    <style>
+        @font-face {
+            font-family: 'NEXON Lv1 Gothic OTF';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'TmonMonsori';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            -webkit-text-size-adjust: 100%;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        #wrap {
+            margin: 3vh;
+            border: 8px solid #0e43f1;
+            border-radius: 20px;
+        }
+        #contents {
+            border: 8px solid #50b5f9;
+            height: 100%;
+            border-radius: 12px;
+            font-family: 'TmonMonsori';
+            color: #0e43f1;
+            padding: 3vw;
+            overflow: hidden;
+        }
+        #header {
+            border-bottom: 1px solid #0e43f1;
+            display: flex;
+            justify-content: space-between;
+        }
+        #header h1 {
+            padding-bottom: 30px;
+        }
+        #header h1 a {
+            color: #0e43f1;
+            font-size: 90px;
+            line-height: 1.1;
+        }
+        #header h1 em {
+            font-style: normal;
+            font-size: 20px;
+            font-family: 'NEXON Lv1 Gothic OTF';
+            text-transform: uppercase;
+            vertical-align: -15px;
+        }
+        #header .nav li {
+            display: inline;
+        }
+        #header .nav li a {
+            font-family: 'NEXON Lv1 Gothic OTF';
+            border: 1px dashed #0e43f1;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            display: inline-block;
+            border-radius: 50%;
+            font-size: 14px;
+            margin: 0 0 5px 3px;
+        }
+        #header .nav li.active a {
+            background: #0e43f1;
+            color: #fff;
+        }
+        #header .nav li a:hover {
+            border-style: solid;
+        } 
+        .content {
+            display: flex;
+            padding-top: 50px;
+            justify-content: space-between;
+            flex-wrap: nowrap
+        }
+        .content .sample {
+            width: 100%;
+            height: 2500px;
+            background: #c0ebfd;
+            border-radius: 10px;
+            overflow-y: scroll;
+        }
+        .desc {
+            font-family: 'NEXON Lv1 Gothic OTF';
+            font-size: 20px;
+            padding-top: 30px;
+        }
+        .sample {
+            position: relative;
+        }
+
+        @media (max-width: 900px){
+            #wrap {margin: 1vh; height: auto;}
+            #header {flex-direction: column; padding-bottom: 20px;}
+            #header h1 {padding-bottom: 20px;}
+            #header h1 a {font-size: 60px;}
+            #header h1 em {display: none;}
+            #contents {padding: 24px;}
+            .content {flex-direction: column; padding-top: 30px;}
+            .content .sample {width: 100%;}
+            .content .code {width: 100%; margin-top: 3%;}
+            .desc {font-size: 16px;}
+        }
+
+        /* option */
+        .sample > section {
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: #fff;
+            font-size: 6vw;
+        }
+
+        /* section */
+        #section1 {background:radial-gradient(ellipse farthest-corner at center bottom, #69d2fb 0%, #20438E 100%);}
+        #section2 {background:radial-gradient(ellipse farthest-corner at center top, #f39264 0%, #f2606f 100%); }
+        #section3 {background:radial-gradient(ellipse farthest-corner at center top, #ffee75, #ff8930);}
+        #section4 {background:radial-gradient(ellipse farthest-corner at center bottom, #6beace, #2e9aa4);}
+        #section5 {background:radial-gradient(ellipse farthest-corner at center top, #cbf49a, #1ea623);}
+        #section6 {background:radial-gradient(ellipse farthest-corner at center top, #6CEBCF 0%, #38a7aa 100%);}
+        
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <main id="contents">
+            <header id="header">
+                <h1><a href="NewParallaxEffect-cover.html">패랠랙스</a> <em>jQuery</em></h1>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="NewParallaxEffect01-javascript.html" title="메뉴 이펙트 자바스크립트01">1</a></li>
+                        <li><a href="NewParallaxEffect02-javascript.html" title="메뉴 이펙트 자바스크립트02">2</a></li>
+                        <li><a href="NewParallaxEffect03-javascript.html" title="메뉴 이펙트 자바스크립트03">3</a></li>
+                        <li><a href="NewParallaxEffect04-javascript.html" title="메뉴 이펙트 자바스크립트04">4</a></li>
+                        <li><a href="NewParallaxEffect05-javascript.html" title="메뉴 이펙트 자바스크립트05">5</a></li>
+                        <li><a href="NewParallaxEffect06-javascript.html" title="메뉴 이펙트 자바스크립트06">6</a></li>
+                        <li><a href="NewParallaxEffect07-javascript.html" title="메뉴 이펙트 자바스크립트07">7</a></li>
+                        <li><a href="NewParallaxEffect08-javascript.html" title="메뉴 이펙트 자바스크립트08">8</a></li>
+                        <li><a href="NewParallaxEffect09-javascript.html" title="메뉴 이펙트 자바스크립트09">9</a></li>
+                        <li><a href="NewParallaxEffect10-javascript.html" title="메뉴 이펙트 자바스크립트10">10</a></li>
+                    </ul>
+                    <ul>
+                        <li class="active"><a href="NewParallaxEffect01-jquery.html" title="메뉴 이펙트 제이쿼리01">1</a></li>
+                        <li><a href="NewParallaxEffect02-jquery.html" title="메뉴 이펙트 제이쿼리02">2</a></li>
+                        <li><a href="NewParallaxEffect03-jquery.html" title="메뉴 이펙트 제이쿼리03">3</a></li>
+                        <li><a href="NewParallaxEffect04-jquery.html" title="메뉴 이펙트 제이쿼리04">4</a></li>
+                        <li><a href="NewParallaxEffect05-jquery.html" title="메뉴 이펙트 제이쿼리05">5</a></li>
+                        <li><a href="NewParallaxEffect06-jquery.html" title="메뉴 이펙트 제이쿼리06">6</a></li>
+                        <li><a href="NewParallaxEffect07-jquery.html" title="메뉴 이펙트 제이쿼리07">7</a></li>
+                        <li><a href="NewParallaxEffect08-jquery.html" title="메뉴 이펙트 제이쿼리08">8</a></li>
+                        <li><a href="NewParallaxEffect09-jquery.html" title="메뉴 이펙트 제이쿼리09">9</a></li>
+                        <li><a href="NewParallaxEffect10-jquery.html" title="메뉴 이펙트 제이쿼리10">10</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <section>
+                <p class="desc">제이쿼리를 이용하여 <strong>탭 메뉴</strong>를 구현합니다.</p>
+                <div class="content">
+                    <div class="sample">
+                        <section id="section1">section1</section>
+                        <section id="section2">section2</section>
+                        <section id="section3">section3</section>
+                        <section id="section4">section4</section>
+                        <section id="section5">section5</section>
+                        <section id="section6">section6</section>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="skin/prism.js"></script>
+    <script>
+     
+    </script>
+
+</body>
+</html>

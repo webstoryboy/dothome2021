@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: "IBM Plex Sans", sans-serif;
+            font-size: 100%;
+            -webkit-animation: fade-in 1s ease both;
+            animation: fade-in 1s ease both;
+        }
+
+        .scenes {
+            height: 100vh;
+            font-family: sans-serif;
+            -ms-scroll-snap-type: y mandatory;
+            scroll-snap-type: y mandatory;
+            -ms-scroll-snap-points-y: repeat(100vh);
+            scroll-snap-points-y: repeat(100vh);
+            overflow-y: scroll;
+            padding-bottom: 2em;
+        }
+
+        @media (min-width: 56em) {
+            .scenes.has-scroll-snap {
+                -ms-scroll-snap-type: y mandatory;
+                scroll-snap-type: y mandatory;
+                -ms-scroll-snap-points-y: repeat(100vh);
+                scroll-snap-points-y: repeat(100vh);
+                overflow-y: scroll;
+            }
+        }
+
+        .scenes.has-scroll-snap .scene {
+            scroll-snap-align: start;
+        }
+
+        .scene {
+            position: relative;
+            width: 100%;
+            padding: 4em 0 0;
+        }
+
+        @media (min-width: 56em) {
+            .scene {
+                height: 100vh;
+                padding: 4em;
+            }
+        }
+
+        .scene.is-1 {
+            background-color: #fbe6e6;
+            color: #033860;
+        }
+
+        .scene.is-2 {
+            background-color: #8ea097;
+            color: #fbe6e6;
+        }
+
+        .scene.is-3 {
+            background-color: #033860;
+            color: #fbe6e6;
+        }
+
+        .scene.is-4 {
+            background-color: #fff;
+            color: #8c5e58;
+        }
+
+        .scene.is-5 {
+            background-color: #8c5e58;
+            color: #fbe6e6;
+        }
+
+        .scene__grid {
+            width: 100%;
+            max-width: 90em;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 56em) {
+            .scene__grid {
+                display: grid;
+                grid-template-columns: 50% 50%;
+                grid-column-gap: 3em;
+                height: 100%;
+            }
+        }
+
+        @media (min-width: 85em) {
+            .scene__grid {
+                width: 80%;
+            }
+        }
+
+        .scene__media {
+            position: relative;
+            height: 25em;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 56em) {
+            .scene__media {
+                height: 100%;
+                max-height: 80vh;
+                align-self: center;
+            }
+        }
+
+        @media (min-width: 56em) {
+            .scene:nth-of-type(even) .scene__media {
+                grid-row: 1;
+                margin-left: auto;
+            }
+        }
+
+        .scene__img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50%;
+        }
+
+        .scene__header {
+            display: flex;
+            align-items: center;
+            padding: 2em 2em 4em;
+        }
+
+        @media (min-width: 85em) {
+            .scene__header {
+                padding: 0 2em;
+            }
+        }
+
+        .scene__title {
+            margin-bottom: 0;
+            font-family: "Bodoni Moda", serif;
+            font-size: 4em;
+            font-weight: 100;
+            letter-spacing: -0.05em;
+            line-height: 1;
+        }
+
+        @media (min-width: 56em) {
+            .scene__title {
+                font-size: 5em;
+            }
+        }
+
+        @media (min-width: 85em) {
+            .scene__title {
+                font-size: 7em;
+            }
+        }
+
+        .scene__text {
+            max-width: 30em;
+            line-height: 1.7;
+        }
+
+        .scene__sep {
+            display: block;
+            height: 2px;
+            width: 4em;
+            margin: 3em 0;
+            background-color: currentColor;
+        }
+
+        .welcome {
+            z-index: 7;
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(251, 230, 230, 0.95);
+            transition: 0.6s ease;
+        }
+
+        .welcome>div {
+            -webkit-animation: fade-down 1s 1s ease both;
+            animation: fade-down 1s 1s ease both;
+        }
+
+        .welcome__link {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .welcome__link:after {
+            content: "";
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            height: 1px;
+            width: 0%;
+            background-color: rgba(3, 56, 96, 0.9);
+            transition: width 0.4s cubic-bezier(0.1, 0.3, 0.3, 0.1);
+        }
+
+        .welcome__link:hover:after {
+            width: 100%;
+        }
+
+        .welcome.has-entered {
+            z-index: -1;
+            opacity: 0;
+        }
+
+        @-webkit-keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fade-down {
+            0% {
+                transform: translateY(-1em);
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0em);
+            }
+        }
+
+        @keyframes fade-down {
+            0% {
+                transform: translateY(-1em);
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0em);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="welcome js-welcome">
+        <div>
+            <span class="welcome__link js-welcome-link">Enter A Sound Experience</span>
+        </div>
+    </section>
+
+    <section class="scenes">
+
+        <!-- Scene -->
+        <article class="scene is-1">
+            <div class="scene__grid">
+                <header class="scene__header">
+                    <div>
+                        <h3 class="scene__title">A Desert Resort City</h3>
+                        <span class="scene__sep"></span>
+                        <p class="scene__text">Palm Springs is a desert resort city in Riverside County, California,
+                            United States, within the Colorado Desert's Coachella Valley. The city covers approximately
+                            94 square miles (240 km2), making it the largest city in Riverside County by land area. With
+                            multiple plots in checkerboard pattern, more than 10% of the city is part of the Agua
+                            Caliente Band of Cahuilla Indians reservation land.</p>
+                    </div>
+                </header>
+                <figure class="scene__media">
+                    <div class="scene__img"
+                        style="background-image: url(https://source.unsplash.com/6SRsI2HuV9c/1400x1800)" />
+                </figure>
+            </div>
+        </article>
+
+        <!-- Scene -->
+        <article class="scene is-2">
+            <!-- Audio -->
+            <audio class="scene__audio"
+                src="https://files.freemusicarchive.org/storage-freemusicarchive-org/tracks/ZykaJ4Q8usFJkPr1zix3rY28pOCepSHsDwhG6zTB.mp3"
+                preload="auto">
+            </audio>
+            <div class="scene__grid">
+                <header class="scene__header">
+                    <div>
+                        <h3 class="scene__title">Winter Snowbird Destination</h3>
+                        <span class="scene__sep"></span>
+                        <p class="scene__text">Although the population of Palm Springs was 44,552 as of the 2010 census,
+                            because Palm Springs is a retirement location, as well as a winter snowbird destination, the
+                            city's population triples between November and March.</p>
+                    </div>
+                </header>
+                <figure class="scene__media">
+                    <div class="scene__img"
+                        style="background-image: url(https://source.unsplash.com/bzuJCMW1kS4/1400x1800)" />
+                </figure>
+            </div>
+        </article>
+
+        <!-- Scene -->
+        <article class="scene is-3">
+            <!-- Audio -->
+            <audio class="scene__audio"
+                src="https://files.freemusicarchive.org/storage-freemusicarchive-org/tracks/q5JFu0K6KiUnKP88QrWoXSJm5zMOsdQrY93DTd8T.mp3"
+                preload="auto">
+            </audio>
+            <div class="scene__grid">
+                <header class="scene__header">
+                    <div>
+                        <h3 class="scene__title">Mid-century Modern</h3>
+                        <span class="scene__sep"></span>
+                        <p class="scene__text">The city is noted for its mid-century modern architecture, design
+                            elements, arts and cultural scene, and recreational activities. Architectural modernists
+                            flourished with commissions from the stars, using the city to explore architectural
+                            innovations, new artistic venues, and an exotic back-to-the-land experiences. </p>
+                    </div>
+                </header>
+                <figure class="scene__media">
+                    <div class="scene__img"
+                        style="background-image: url(https://source.unsplash.com/Xz-_e7-Riis/1200x1500)" />
+                </figure>
+            </div>
+        </article>
+
+        <!-- Scene -->
+        <article class="scene is-4">
+            <!-- Audio -->
+            <audio class="scene__audio"
+                src="https://files.freemusicarchive.org/storage-freemusicarchive-org/tracks/qxhQtRkkH7S6zhFamfm4QuuegDv6rE503icCqvi4.mp3"
+                preload="auto">
+            </audio>
+            <div class="scene__grid">
+                <header class="scene__header">
+                    <div>
+                        <h3 class="scene__title">Kaufmann Desert House</h3>
+                        <span class="scene__sep"></span>
+                        <p class="scene__text">In 1946, Richard Neutra designed the Kaufmann Desert House. A modernist
+                            classic, this mostly glass residence incorporated the latest technological advances in
+                            building materials, using natural lighting and floating planes and flowing space for
+                            proportion and detail.[86] In recent years an energetic preservation program has protected
+                            and enhanced many classic buildings.</p>
+                    </div>
+                </header>
+                <figure class="scene__media">
+                    <div class="scene__img"
+                        style="background-image: url(https://source.unsplash.com/YIMXYjQoBBU/1400x1800)" />
+                </figure>
+            </div>
+        </article>
+
+        <!-- Scene -->
+        <article class="scene is-5">
+            <!-- Audio -->
+            <audio class="scene__audio"
+                src="https://files.freemusicarchive.org/storage-freemusicarchive-org/tracks/DI4hAcHrt0b63CeWpCoFzA8Bks2gWf6HcnHbhj1P.mp3"
+                preload="auto">
+            </audio>
+            <div class="scene__grid">
+                <header class="scene__header">
+                    <div>
+                        <h3 class="scene__title">A Desert Resort City</h3>
+                        <span class="scene__sep"></span>
+                        <p class="scene__text">Palm Springs is a desert resort city in Riverside County, California,
+                            United States, within the Colorado Desert's Coachella Valley. The city covers approximately
+                            94 square miles (240 km2), making it the largest city in Riverside County by land area. With
+                            multiple plots in checkerboard pattern, more than 10% of the city is part of the Agua
+                            Caliente Band of Cahuilla Indians reservation land.</p>
+                    </div>
+                </header>
+                <figure class="scene__media">
+                    <div class="scene__img"
+                        style="background-image: url(https://source.unsplash.com/Qd1wKtjLjyo/1400x1800)" />
+                </figure>
+            </div>
+        </article>
+    </section>
+
+
+    <script>
+        /** 
+         * Welcome Panel 
+         * Just a simple method for removing our welcome panel
+         * The panel serves 2 purposes 
+         * 1. Alerts the user to sound/music coming.
+         * 2. Satisfies Google's/Chrome's requirement for having 
+         *    a user interaction before allowing audio autoplay.
+         *    https://developers.google.com/web/updates/2017/09/autoplay-policy-changes
+         */
+        const welcomePanel = document.querySelector('.js-welcome');
+        const welcomeLink = document.querySelector('.js-welcome-link');
+
+        welcomeLink.addEventListener('click', () => {
+            welcomePanel.classList.add('has-entered')
+        })
+
+        Audio.prototype.stop = function () {
+            this.pause();
+            this.currentTime = 0;
+        };
+
+        const sceneWrap = document.querySelector('.scenes'); // doc and win didn't work in Codepen
+        const scenes = document.querySelectorAll('.scene');
+
+        sceneWrap.addEventListener('scroll', event => {
+            scenes.forEach((scene, index) => {
+                // scene audio
+                const sceneAudio = scene.querySelector('audio')
+
+                if (isVisibleAfterTop(scene)) {
+                    if (sceneAudio) sceneAudio.play()
+                } else {
+                    if (sceneAudio) sceneAudio.stop()
+                }
+            })
+        })
+
+        function isVisibleAfterTop(elem) {
+            const rect = elem.getBoundingClientRect();
+            const winHeight = window.innerHeight || document.documentElement.clientHeight;
+
+            return (
+                rect.top <= 0 && rect.bottom >= 0
+            );
+        }
+    </script>
+</body>
+
+</html>

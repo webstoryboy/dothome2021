@@ -1,0 +1,932 @@
+/* 레이아웃 */
+#wrap {}
+
+#header {
+    height: 325px;
+    /* background-image: url(../img/header_bg.jpg);
+    background-repeat: repeat-x;
+    background-position: center; */
+    background: url(../img/header_bg.jpg) repeat-x center;
+}
+
+#contents {}
+
+#footer {
+    border-top: 1px solid #eee;
+}
+
+/* 컨텐츠 레이아웃 */
+#cont-nav {
+    background-color: #f6fdff;
+}
+
+#cont-tit {
+    background-color: #eaf7fd;
+}
+
+#cont-ban {
+    background-color: #dceff7;
+}
+
+#cont-cont {
+    background-color: #f6fdff;
+}
+
+/* 컨테이너 : 가운데 영역 */
+.container {
+    width: 990px;
+    height: inherit;
+    margin: 0 auto;
+    /* background: rgba(255, 255, 255, 0.3); */
+}
+
+/* 헤더 */
+.header {}
+
+.header .header-menu {
+    text-align: right;
+}
+
+.header .header-menu a {
+    color: #fff;
+    padding: 10px 0px 10px 13px;
+    display: inline-block;
+}
+
+.header .header-menu a:hover {
+    text-decoration: underline;
+}
+
+.header .header-title {
+    text-align: center;
+}
+
+.header .header-title h1 {
+    background-color: #4aa8d4;
+    display: inline-block;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 40px;
+    font-size: 28px;
+    text-transform: uppercase;
+}
+
+.header .header-title p {
+    text-align: center;
+}
+
+.header .header-title p a {
+    background-color: #2698cb;
+    font-size: 18px;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.header .header-icon {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.header .header-icon a {
+    width: 60px;
+    height: 60px;
+    background-image: url(../img/icon.png);
+    display: inline-block;
+}
+
+.header .header-icon a.icon1 {
+    background-position: 0 0px;
+}
+
+.header .header-icon a.icon2 {
+    background-position: 0 -60px;
+}
+
+.header .header-icon a.icon3 {
+    background-position: 0 -120px;
+}
+
+.header .header-icon a.icon4 {
+    background-position: 0 -180px;
+}
+
+.header .header-icon a.icon1:hover {
+    background-position: -60px 0;
+}
+
+.header .header-icon a.icon2:hover {
+    background-position: -60px -60px;
+}
+
+.header .header-icon a.icon3:hover {
+    background-position: -60px -120px;
+}
+
+.header .header-icon a.icon4:hover {
+    background-position: -60px -180px;
+}
+
+/* 전체 메뉴 */
+.nav {
+    padding: 30px 0;
+    overflow: hidden;
+}
+
+.nav>div {
+    float: left;
+    width: 40%;
+}
+
+.nav>div h3 {
+    font-size: 18px;
+    color: #25a2d0;
+    margin-bottom: 4px;
+}
+
+.nav>div:last-child {
+    width: 20%;
+}
+
+.nav>div ol {
+    overflow: hidden;
+}
+
+.nav>div ol li {
+    width: 50%;
+    float: left;
+}
+
+.nav>div:last-child ol li {
+    width: 100%;
+}
+
+.nav>div ol li a:hover {
+    text-decoration: underline;
+}
+
+
+/* float: left로 인한 영역깨짐(height:0) 방지법 
+    1. 깨지는 영역에 똑같이 float: left를 사용한다.(X) --> 모든 박스에 float: left를 사용하게 됩니다.
+    2. float의 성질을 차단하는 clear: both를 사용한다.(X) --> 어떤 영역이 깨졌는지 찾기 어려움
+    3. float을 사용한 상위 박스한테 overflow: hidden을 사용합니다.(O) --> 완벽한 방법은 아님
+    4. clearfix을 속성을 만들어서 사용합니다.(O)
+*/
+
+
+/* 타이틀 */
+.tit {
+    position: relative;
+}
+
+.tit h2 {
+    text-align: center;
+    font-size: 40px;
+    padding: 5px 0;
+    letter-spacing: 2px;
+    font-family: 'Nanum Brush Script', cursive;
+    color: #2c94c4;
+}
+
+.tit .btn {
+    position: absolute;
+    right: 0px;
+    top: 5px;
+    width: 60px;
+    height: 60px;
+    background-image: url(../img/icon.png);
+    background-position: 0 -600px;
+}
+
+
+/* 배너 */
+.ban {
+    position: relative;
+    padding: 20px 0;
+}
+
+.ban ul {
+    overflow: hidden;
+}
+
+.ban ul li.ban_img1 {
+    float: left;
+    width: 330px;
+}
+
+.ban ul li.ban_img2 {
+    float: left;
+    width: 330px;
+    text-align: center;
+}
+
+.ban ul li.ban_img3 {
+    float: left;
+    width: 330px;
+    text-align: right;
+}
+
+.ban .prev {
+    position: absolute;
+    left: -80px;
+    top: 60px;
+    width: 43px;
+    height: 43px;
+    background-image: url(../img/icon.png);
+    background-position: -150px 0;
+}
+
+.ban .prev:hover {
+    background-position: -193px 0;
+}
+
+.ban .next {
+    position: absolute;
+    right: -80px;
+    top: 60px;
+    width: 43px;
+    height: 43px;
+    background-image: url(../img/icon.png);
+    background-position: -150px -43px;
+}
+
+.ban .next:hover {
+    background-position: -193px -43px;
+}
+
+.ban img {
+    border: 4px solid #dcdcdc;
+}
+
+.ban img:hover {
+    border-color: #98bcdc;
+}
+
+
+/* 컨텐츠 */
+.cont {
+    padding-top: 30px;
+    overflow: hidden;
+}
+
+.cont .column {
+    position: relative;
+    float: left;
+    width: 289px;
+    height: 363px;
+    margin: 0 30px 30px 0;
+    padding-right: 30px;
+}
+
+.cont .column.col1 {
+    border-right: 1px solid #c8c8c8;
+}
+
+.cont .column.col2 {
+    border-right: 1px solid #c8c8c8;
+}
+
+.cont .column.col3 {
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.cont .column.col4 {
+    border-right: 1px solid #c8c8c8;
+}
+
+.cont .column.col5 {
+    border-right: 1px solid #c8c8c8;
+}
+
+.cont .column.col6 {
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.cont .column .ico_img {
+    width: 60px;
+    height: 60px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url(../img/icon.png);
+}
+
+.cont .column .ico_tit {
+    padding-left: 70px;
+    font-size: 16px;
+    color: #2c94c4;
+}
+
+.cont .column .ico_desc {
+    padding-left: 70px;
+    border-bottom: 1px solid #d0d0d0;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.cont .col1 .ico_img {
+    background-position: 0 -240px;
+}
+
+.cont .col2 .ico_img {
+    background-position: 0 -300px;
+}
+
+.cont .col3 .ico_img {
+    background-position: 0 -360px;
+}
+
+.cont .col4 .ico_img {
+    background-position: 0 -420px;
+}
+
+.cont .col5 .ico_img {
+    background-position: 0 -480px;
+}
+
+.cont .col6 .ico_img {
+    background-position: 0 -540px;
+}
+
+.cont .col1 .ico_img:hover {
+    background-position: -60px -240px;
+}
+
+.cont .col2 .ico_img:hover {
+    background-position: -60px -300px;
+}
+
+.cont .col3 .ico_img:hover {
+    background-position: -60px -360px;
+}
+
+.cont .col4 .ico_img:hover {
+    background-position: -60px -420px;
+}
+
+.cont .col5 .ico_img:hover {
+    background-position: -60px -480px;
+}
+
+.cont .col6 .ico_img:hover {
+    background-position: -60px -540px;
+}
+
+/* 게시판1 */
+.notice {
+    position: relative;
+}
+
+.notice h4 {
+    font-size: 14px;
+    color: #0093bd;
+    padding-bottom: 3px;
+    font-weight: bold;
+}
+
+.notice ul li {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    /* 한줄 효과 */
+    background: url(../img/dot.gif) no-repeat 0 8px;
+    padding-left: 8px;
+    /* 리스트 블릿 기호 */
+}
+
+.notice ul li a {
+    font-size: 12px;
+}
+
+.notice .more {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url(../img/icon.png) -150px -90px;
+    width: 17px;
+    height: 17px;
+}
+
+/* 게시판2 */
+.notice2 {
+    margin-top: 15px;
+    position: relative;
+}
+
+.notice2 h4 {
+    font-size: 14px;
+    color: #0093bd;
+    padding-bottom: 3px;
+    font-weight: bold;
+}
+
+.notice2 li {
+    overflow: hidden;
+    background: url(../img/dot.gif) no-repeat 0 8px;
+    padding-left: 8px;
+}
+
+.notice2 li a {
+    float: left;
+    width: 65%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 12px;
+}
+
+.notice2 li span {
+    float: right;
+    width: 35%;
+    text-align: right;
+    font-size: 12px;
+}
+
+.notice2 .more {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url(../img/icon.png) -150px -90px;
+    width: 17px;
+    height: 17px;
+}
+
+/* 게시판3 */
+.notice3 {
+    position: relative;
+}
+
+.notice3 h4 {
+    font-size: 14px;
+    color: #0093bd;
+    padding-bottom: 3px;
+    font-weight: bold;
+}
+
+.notice3 ul {}
+
+.notice3 li {
+    position: relative;
+    padding: 8px 0 14px 60px;
+}
+
+.notice3 li a {}
+
+.notice3 li a img {
+    width: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 1px solid #0093bd;
+}
+
+.notice3 li a strong {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.notice3 li a span {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 12px;
+}
+
+.notice3 .more {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url(../img/icon.png) -150px -90px;
+    width: 17px;
+    height: 17px;
+}
+
+/* 마우스 오버효과1 */
+.notice_hover {}
+
+.notice_hover h4 {
+    font-size: 14px;
+    color: #0093bd;
+    padding-bottom: 3px;
+    font-weight: bold;
+}
+
+.notice_hover ul {
+    overflow: hidden;
+}
+
+.notice_hover li {
+    float: left;
+    width: 93px;
+    margin-right: 5px;
+    text-align: center;
+}
+
+.notice_hover li:last-child {
+    margin-right: 0;
+}
+
+.notice_hover li a {}
+
+.notice_hover li a span {
+    position: relative;
+    display: block;
+    width: 93px;
+    height: 93px;
+    line-height: 93px;
+}
+
+.notice_hover li a span img {
+    width: 100%;
+}
+
+.notice_hover li a span em {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-style: normal;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+
+.notice_hover li a span:hover em {
+    visibility: visible;
+}
+
+.notice_hover li a strong {
+    padding-top: 3px;
+    display: inline-block;
+    font-size: 12px;
+}
+
+/* 마우스 오버효과2 */
+.notice_hover2 {
+    margin-top: 15px;
+}
+
+.notice_hover2 ul {
+    overflow: hidden;
+}
+
+.notice_hover2 li {
+    float: left;
+    width: 93px;
+    margin-right: 5px;
+    text-align: center;
+}
+
+.notice_hover2 li:last-child {
+    margin-right: 0;
+}
+
+.notice_hover2 li a span {
+    position: relative;
+    display: block;
+    width: 93px;
+}
+
+.notice_hover2 li a span img {
+    width: 100%;
+}
+
+.notice_hover2 li a span em {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-style: normal;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    width: 100%;
+    visibility: hidden;
+}
+
+.notice_hover2 li a span:hover em {
+    visibility: visible;
+}
+
+.notice_hover2 li a strong {
+    padding-top: 3px;
+    display: inline-block;
+    font-size: 12px;
+}
+
+
+
+/* 콘텐츠 요소를 보이지 않게 하는 방법 
+1. display: none -- display: block(영역이 사라짐)(애니메이션X)
+2. visibility: hidden -- visibility: visible(영역 유지)(애니메이션X)
+3. opacity: 0 -- opacity: 1 (영역 유지)(애니메이션O)
+4. width: 0; height: 0; overflow: hidden; //ir효과
+*/
+
+
+/* 탭 메뉴 */
+.tab_menu {
+    position: relative;
+    border: 1px solid #ccc;
+    height: 105px;
+    padding: 8px;
+}
+
+.tab_menu ul {
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+}
+
+.tab_menu ul li {
+    float: left;
+    border: 1px solid #ccc;
+    margin-right: -1px;
+    margin-bottom: -1px;
+}
+
+.tab_menu ul li a {
+    padding: 5px 10px;
+    display: block;
+}
+
+.tab_menu ul li ul {
+    position: absolute;
+    left: 0;
+    top: 48px;
+    border-bottom: 0;
+}
+
+.tab_menu ul li ul li {
+    float: none;
+    border: 0;
+    padding-left: 18px;
+    background: url(../img/dot.gif) no-repeat 9px 8px;
+}
+
+.tab_menu ul li ul li a {
+    padding: 0 0 3px;
+}
+
+.tab_menu ul li.active {
+    background: #2c94c4;
+}
+
+.tab_menu ul li.active a {
+    color: #fff;
+}
+
+.tab_menu ul li.active ul li a {
+    color: #000;
+}
+
+/* notice4 */
+.notice4 {
+    position: relative;
+    border: 1px solid #ccc;
+    margin-top: 15px;
+}
+
+.notice4 h4 {
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+    color: #0093bd;
+    padding: 8px 10px;
+}
+
+.notice4 h4 em {
+    color: #cf3292;
+}
+
+.notice4 ul {
+    padding: 10px;
+}
+
+.notice4 li {
+    overflow: hidden;
+    background: url(../img/dot.gif) no-repeat 0 8px;
+    padding-left: 8px;
+}
+
+.notice4 li a {
+    float: left;
+    width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.notice4 li span {
+    float: right;
+    width: 30%;
+}
+
+.notice4 .more {
+    position: absolute;
+    right: 9px;
+    top: 9px;
+}
+
+
+/* gallery */
+.gallery {
+    position: relative;
+    border: 1px solid #ccc;
+    height: 255px;
+    overflow: hidden;
+}
+
+.gallery h4 {
+    font-size: 14px;
+    color: #0093be;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0 8px 11px;
+}
+
+.gallery .gallery_btn {
+    position: absolute;
+    right: 5px;
+    top: 7px;
+}
+
+.gallery .gallery_btn ul {
+    overflow: hidden;
+}
+
+.gallery .gallery_btn li {
+    float: left;
+    margin: 1px 2px;
+}
+
+.gallery .gallery_btn li a {
+    display: block;
+    width: 23px;
+    height: 23px;
+    background: url(../img/icon.png) no-repeat;
+}
+
+.gallery .gallery_btn li.gb_icon1 a {
+    background-position: -150px -120px;
+}
+
+.gallery .gallery_btn li.gb_icon2 a {
+    background-position: -150px -143px;
+}
+
+.gallery .gallery_btn li.gb_icon3 a {
+    background-position: -150px -166px;
+}
+
+.gallery .gallery_btn li.gb_icon4 a {
+    background-position: -150px -189px;
+}
+
+.gallery .gallery_btn li.gb_icon1 a:hover {
+    background-position: -173px -120px;
+}
+
+.gallery .gallery_btn li.gb_icon2 a:hover {
+    background-position: -173px -143px;
+}
+
+.gallery .gallery_btn li.gb_icon3 a:hover {
+    background-position: -173px -166px;
+}
+
+.gallery .gallery_btn li.gb_icon4 a:hover {
+    background-position: -173px -189px;
+}
+
+.gallery .gallery_img img {
+    width: 100%;
+}
+
+/* footer */
+.footer {
+    padding: 25px 0;
+    text-align: center;
+}
+
+.footer ul {
+    margin-bottom: 20px;
+}
+
+.footer li {
+    display: inline;
+    padding: 0 7px 0 10px;
+    position: relative;
+}
+
+.footer li:before {
+    content: '';
+    width: 1px;
+    height: 12px;
+    background: #ccc;
+    position: absolute;
+    left: 0;
+    top: 2px
+}
+
+.footer li:first-child:before {
+    width: 0;
+    height: 0;
+}
+
+/* ad */
+.ad {
+    margin-top: 15px;
+}
+
+.ad h4 {
+    font-size: 14px;
+    color: #0093bd;
+    padding-bottom: 3px;
+    font-weight: bold;
+}
+
+.ad ul {
+    overflow: hidden;
+}
+
+.ad li {
+    float: left;
+    width: 93px;
+    margin-right: 5px;
+}
+
+.ad li img {
+    width: 100%;
+}
+
+.ad li:last-child {
+    margin-right: 0;
+}
+
+
+/* 로그인 */
+#login-wrap {
+    background: #f2f4f5;
+    padding: 15px;
+}
+
+.login_header {
+    overflow: hidden;
+    font-size: 12px;
+    height: 30px;
+}
+
+.login_header .lh_check {
+    float: left;
+    padding-right: 15px;
+}
+
+.login_header .lh_check .input_check {
+    vertical-align: -2px;
+}
+
+.login_header .lh_ip {
+    float: left;
+}
+
+.login_header .lh_ip em {
+    color: #0093bd;
+    text-decoration: underline;
+}
+
+.login_content {
+    position: relative;
+}
+
+.login_content .input_text {
+    width: 182px;
+    height: 16px;
+    padding: 2px 5px;
+    border: 1px solid #bebebe;
+    margin-bottom: 3px;
+    background: #fff;
+}
+
+.login_content .lc_btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 62px;
+    height: 47px;
+    background: #fff;
+    border: 1px solid #bebebe;
+}
+
+.login_footer {
+    margin-top: 5px;
+}
+
+.login_footer li {
+    display: inline;
+}
+
+.login_footer li a {
+    font-size: 12px;
+}

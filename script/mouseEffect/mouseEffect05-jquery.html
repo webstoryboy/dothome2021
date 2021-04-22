@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Effect05 - jQuery</title>
+    <style>
+        @font-face {
+            font-family: 'Cafe24Simplehae';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Simplehae.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        *, *::before, *::after {box-sizing: border-box; margin: 0; padding: 0; color: #fff;}
+        a {text-decoration: none; color: #fff; transition: all 0.2s;}
+        a:hover {border-bottom: 1px dashed #fff;}
+        img {width: 100%; vertical-align: top;}
+        li {list-style: none;}
+
+        body {
+            background: url(../assets/img/images10@2.jpg) no-repeat center center;
+            background-size: cover;
+            background-color: #a18cd1;
+            background-blend-mode:luminosity;
+            height: 100vh;
+            overflow: hidden;
+            font-size: 16px;
+            line-height: 1.5;
+            font-family: 'Cafe24Simplehae';
+            /* cursor: none; */
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: absolute; left: 0; top: 0;
+            width: 100%; height: 100vh;
+            background: rgba(8,31,36,0.7);
+        }
+
+        /* info */
+        .info {
+            position: fixed; z-index: 1000;
+        }
+        .info.left {
+            left: 20px; top: 20px;
+        }
+        .info.right {
+            right: 20px; top: 20px;
+        }
+        .info.bottom {
+            right: 20px; bottom: 20px;
+        }
+        .info.top {
+            left: 20px; bottom: 20px;
+        }
+        .info.top li.active {
+            color: orange;
+            text-decoration: underline;
+        }
+        .info h1 {
+            font-size: 2rem;
+            line-height: 1.4;
+        }
+        .info p {
+            font-size: 1rem;
+        }
+        .info li {
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+        .info li a {
+            color:#fff;
+            width: 25px; height: 25px;
+            border: 1px dashed #fff;
+            display: inline-block;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            font-size: 0.8rem;
+            margin: 3px;
+        }
+        .info li a.active {
+            background: #fff;
+            color: #000;
+        }
+        .info.view {
+            left: 20px;
+            bottom: 20px;
+        }
+        .info.view a {
+            color: #fff;
+            border: 1px solid #fff;
+            border-radius: 30px;
+            padding: 5px 30px;
+        }
+        @media (max-width: 800px){
+            .info h1 {display: none;}
+        }
+
+        /* main */
+        .contents {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .move-image {
+            position: relative;
+            cursor: none;
+        }
+        .move-image .ming {
+            width: 50vw;
+            height: 60vh;
+            background: #ccc;
+            position: relative;
+            overflow: hidden;
+            transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+        }
+        .move-image:hover .ming {
+            transform: scale(1.025);
+        }
+        .move-image .ming .img {
+            position: absolute;
+            left: -5%; top: -5%;
+            width: 110%; height: 110%;
+            object-fit: cover;
+            transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+        }
+        .move-image .mtext {
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            white-space: nowrap;
+        }
+        .cursor {
+            position: absolute;
+            width: 20px; height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            z-index: 1000;
+            user-select: none;
+            pointer-events: none;
+            transform: scale(1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .cursor strong {
+            background: rgba(0,0,0,1);
+            white-space: nowrap;
+            position: absolute;
+            display: block;
+            padding: 0 5px;
+            display: none;
+        }
+        .cursor strong:first-child {
+            left: 30px; top: 10px;
+        }
+        .cursor strong:last-child {
+            left: 30px; top: 35px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- info -->
+    <div class="info left">
+        <h1>Mouse Effect05 - jQuery</h1>
+        <p>마우스 따라다니기</p>
+    </div>
+    <div class="info right">
+        <ul>
+            <li><a href="mouseEffect01-jquery.html">1</a><a href="mouseEffect01-javascript.html">1</a></li>
+            <li><a href="mouseEffect02-jquery.html">2</a><a href="mouseEffect02-javascript.html">2</a></li>
+            <li><a href="mouseEffect03-jquery.html">3</a><a href="mouseEffect03-javascript.html">3</a></li>
+            <li><a href="mouseEffect04-jquery.html" class="active">4</a><a href="mouseEffect04-javascript.html">4</a></li>
+            <li><a href="mouseEffect05-jquery.html">5</a><a href="mouseEffect05-javascript.html">5</a></li>
+            <li><a href="mouseEffect06-jquery.html">6</a><a href="mouseEffect06-javascript.html">6</a></li>
+            <li><a href="mouseEffect07-jquery.html">7</a><a href="mouseEffect07-javascript.html">7</a></li>
+            <li><a href="mouseEffect08-jquery.html">8</a><a href="mouseEffect08-javascript.html">8</a></li>
+            <li><a href="mouseEffect09-jquery.html">9</a><a href="mouseEffect09-javascript.html">9</a></li>
+        </ul>
+    </div>
+    <div class="info bottom">
+        <ul>
+            <li>pageX : <span class="pageX">0</span>px</li>
+            <li>pageY : <span class="pageY">0</span>px</li>
+        </ul>
+    </div>
+    <div class="info view">
+        <a href="#" class="cord">좌표보기</a>
+    </div>
+    <!-- info -->
+
+    <main>
+        <div class="cursor">
+            <strong>mouseX <span class="mouseX">0</span></strong>
+            <strong>mouseY <span class="mouseY">0</span></strong>
+        </div>
+
+        <div class="contents">
+            <div class="move-image">
+                <div class="ming">
+                    <img class="img" src="../assets/img/images10.jpg" alt="이미지">
+                </div>
+                <div class="mtext">
+                    <p>Luck is when preparedness meets opportunity.</p>
+                    <p>운이란 준비가 기회를 만나는 것이다.</p>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script>
+        let x, y = 0;
+
+        $(".move-image").mousemove(function(e){
+            gsap.to(".cursor", {duration: .2, left: e.pageX -10, top: e.pageY -10});
+
+            //좌표값을 중앙으로 설정
+            //$(".move-image").width()/2; 컨텍츠 박스의 반지름
+            //$(".move-image").position().left: 컨텐츠 박스의 왼쪽 포지션 값
+
+            x = e.pageX - ($(".move-image").width()/2 + $(".move-image").position().left);
+            y = e.pageY - ($(".move-image").height()/2 + $(".move-image").position().top); 
+
+            $(".img").attr({"style":"transform: translate("+ x/20 +"px, "+ y/20 +"px)"});
+        })
+
+
+        //출력용
+        $(window).mousemove(function(e){
+            $(".pageX").text(e.pageX);
+            $(".pageY").text(e.pageY);
+            $(".mouseX").text(Math.floor(x)+"px");
+            $(".mouseY").text(Math.floor(y)+"px");
+        })
+
+        //좌표 확인
+        $(".cord").click(function(){
+            $(".cursor strong").fadeToggle()
+        })
+    </script>
+</body>
+</html>

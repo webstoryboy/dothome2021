@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Abel');
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        .accordion  {
+            width: 500px;
+            margin: 50px auto;
+            border-radius: 5px;
+            padding: 30px;
+            font-size: 14px;
+            font-family: 'Abel';
+        }
+        .accordion h2 {
+            background: #3498db;
+            padding: 10px 15px;
+            color: #fff;
+        }
+        .accordion .answer   {
+            max-height: 0;
+            overflow: hidden;
+            background: #444;
+            color: #fff;
+            border-left: 4px solid transparent;
+            transition: all .7s cubic-bezier(0, 0.52, 0.11, 1.07);
+        }
+        .accordion .answer p {
+            padding: 20px;
+        }
+        .accordion li.open .answer  {
+            max-height: 150px;
+        }
+
+    </style>
+</head>
+<body>
+   
+    <div class="accordion">
+        <ul>
+            <li>
+                <h2>Will I be rich?</h2>
+                <div class="answer">
+                    <p>Absolutely! Rich Forever Baby! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est sunt earum, dolorum enim totam beatae eius. 
+                    Harum quibusdam laborum, sint impedit! Aliquam quo tempore 
+                    corrupti vero officia enim vitae optio.</p>
+                </div>
+            </li>
+            <li>
+                <h2>What's for dinner?</h2>
+                <div class="answer">
+                    <p>We got Pho, Chicken And Rice, and Momma Famous Pork Chop marinaited in bomb ass special sauce dipped with Fish Sauce Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est sunt earum, dolorum enim totam beatae eius. 
+                    Harum quibusdam laborum, sint impedit! Aliquam quo tempore 
+                    corrupti vero officia enim vitae optio.</p>
+                </div>
+            </li>
+            <li>
+                <h2>Is JavaScript the SHIT?</h2>
+                <div class="answer">
+                    <p>HELL YEAH! Hallelujah! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est sunt earum, dolorum enim totam beatae eius. 
+                    Harum quibusdam laborum, sint impedit! Aliquam quo tempore 
+                    corrupti vero officia enim vitae optio.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        
+        const accordion = document.querySelector('.accordion');
+        const items = accordion.querySelectorAll('li');
+        const questions = accordion.querySelectorAll('h2');
+
+        function toggleAccordion() {
+            const thisItem = this.parentNode;
+        
+            items.forEach(item => {
+                if (thisItem == item) {
+                    thisItem.classList.toggle('open');
+                    return;
+                }
+                item.classList.remove('open');
+            });
+        }
+
+        questions.forEach(question => question.addEventListener('click', toggleAccordion));
+    </script>
+</body>
+</html>
+

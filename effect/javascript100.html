@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //01 변수
+        var x = 100;
+        var y = 200;
+        var z = "javascript";
+
+        document.write("*** 01. 변수 ***<br>");
+        document.write(x, "<br>");
+        document.write(y, "<br>");
+        document.write(z, "<br>");
+        document.write(x * y, "<br>");
+        document.write(x + z, "<br>");
+        document.write("<br><br>");
+
+        //02 배열
+        let arr1 = new Array();
+        arr1[0] = 100;
+        arr1[1] = 200;
+        arr1[2] = "javascript";
+
+        document.write("*** 02 배열 ***<br>");
+        document.write(arr1[0], "<br>");
+        document.write(arr1[1], "<br>");
+        document.write(arr1[2], "<br>");
+        document.write("<br><br>");
+
+        //03 배열
+        const arr2 = [];
+        arr2[0] = 100;
+        arr2[1] = 200;
+        arr2[2] = "javascript";
+
+        document.write("*** 03 배열 ***<br>");
+        document.write(arr2[0], "<br>");
+        document.write(arr2[1], "<br>");
+        document.write(arr2[2], "<br>");
+        document.write("<br><br>");
+
+        //04 배열
+        const arr3 = new Array(100, 200, "javascript");
+
+        document.write("*** 04 배열 ***<br>");
+        document.write(arr3[0], "<br>");
+        document.write(arr3[1], "<br>");
+        document.write(arr3[2], "<br>");
+        document.write("<br><br>");
+
+        //05 배열
+        const arr4 = [100, 200, "javascript"];
+
+        document.write("*** 05 배열 ***<br>");
+        document.write(arr4[0], "<br>");
+        document.write(arr4[1], "<br>");
+        document.write(arr4[2], "<br>");
+        document.write("<br><br>");
+
+        //06 2차 배열
+        const arr5 = [100, 200, ["javascript", "jquery"]];
+
+        document.write("*** 06 배열 ***<br>");
+        document.write(arr5[0], "<br>");
+        document.write(arr5[1], "<br>");
+        document.write(arr5[2][0], "<br>");
+        document.write(arr5[2][1], "<br>");
+        document.write("<br><br>");
+
+        //07 배열 갯수
+        const arr6 = [100, 200, "javascript"];
+
+        document.write("*** 07 배열 갯수 ***<br>");
+        document.write(arr6.length, "<br>");
+        document.write("<br><br>");
+
+        //08 배열 불러오기(for문)
+        const arr7 = [100, 200, "javascript"];
+
+        document.write("*** 08 배열 출력 ***<br>");
+        for(let i=0; i<arr7.length; i++){
+            document.write(arr7[i], "<br>");
+        }
+        document.write("<br><br>");
+
+        //09 배열 불러오기(forEach)
+        const arr8 = [100, 200, "javascript"];
+
+        document.write("*** 09 배열 불러오기(forEach) ***<br>");
+        arr8.forEach((el) => {
+            document.write(el, "<br>");
+        });
+        document.write("<br>");
+
+        arr8.forEach((element, index, array) => {
+            document.write(element, "<br>");
+            document.write(index, "<br>");
+            document.write(array, "<br>");
+        });
+        document.write("<br><br>");
+
+
+
+
+        //10 배열 불러오기(map)
+        const arr9 = [100, 200, "javascript"];
+        
+        document.write("*** 10 배열 불러오기(map) ***<br>");
+        arr9.map((el) => {
+            document.write(el, "<br>");
+        });
+        document.write("<br>");
+
+        arr9.map((element, index, array) => {
+            document.write(element, "<br>");
+            document.write(index, "<br>");
+            document.write(array, "<br>");
+        });
+        document.write("<br><br>");
+
+
+
+
+        //11 배열 불러오기(for in)
+        const arr10 = [100, 200, "javascript"];
+
+        document.write("*** 11 배열 불러오기(for in) ***<br>");
+        for( let i in arr10){
+            document.write(arr10[i]);
+        }
+        document.write("<br><br>");
+
+
+
+
+        
+
+
+        //12 배열 불러오기(for of)
+        const arr11 = [100, 200, "javascript"];
+
+        document.write("*** 12 배열 불러오기(for of) ***<br>");
+        for( let i of arr11){
+            document.write(i);
+        }
+        document.write("<br><br>");
+
+
+        //13 배열 조회하기
+        const arr12 = [100, 200, "javascript"];
+
+        let search = "javascript";
+
+        document.write("*** 13 배열 조회하기 ***<br>");
+        for(let i=0; i<arr12.length; i++){
+            if( search ==  arr12[i]){
+                document.write( search + "를 찾았습니다.");
+            }
+        }
+        document.write("<br><br>");
+
+
+        //14 배열 펼침 연산자(Spread Syntax)
+        const arr13 = [100, 200, 300, 400, 500];
+
+        document.write("*** 14 배열 ***<br>");
+        document.write(arr13, "<br>");
+        document.write(...arr13, "<br>");
+
+        document.write("<br><br>");
+
+
+        //15 배열 최댓값 구하기
+        const arr14 = [100, 200, 300, 400, 500];
+        let max;
+        for(let i=0; i<arr14.length; i++){
+            if(arr14[i] > arr14[0]){
+                max = arr14[i]
+            }
+        }
+        document.write("*** 15 배열 최댓값 구하기 *** <br>");
+        document.write(max,"<br><br>");
+
+
+        //16 배열 Math로 최댓값 구하기
+        const arr15 = [100, 200, 300, 400, 500];
+        let max2 = Math.max(...arr15);
+
+        document.write("*** 16 배열 Math로 최댓값 구하기 *** <br>");
+        document.write(max2,"<br><br>");
+       
+
+        //17 배열 
+        const arr16 = [100, 200, 300, 400, 500];
+
+        document.write("*** 17 배열 join *** <br>");
+        document.write(arr16.join('*'), "<br><br>");
+
+        document.write("*** 18 배열 reverse *** <br>");
+        document.write(arr16.reverse(), "<br><br>");
+
+        document.write("*** 19 배열 sort *** <br>");
+        document.write(arr16.sort(), "<br>");
+        document.write(arr16.sort(function(a, b){return b - a}), "<br>");
+        document.write(arr16.sort(function(a, b){return a - b}), "<br><br>");
+
+        document.write("*** 20 배열 slice *** <br>");
+        document.write(arr16.slice(1,3), "<br><br>");
+
+        const arr17 = [600, 700, 800, 900, 1000];
+        document.write("*** 21 배열 concat *** <br>");
+        document.write(arr16.concat(arr17), "<br><br>");
+        
+        document.write("*** 22 배열 shift *** <br>");
+        document.write(arr16.shift(), "<br>");
+        document.write(arr16, "<br><br>");
+
+        document.write("*** 23 배열 unshift *** <br>");
+        document.write(arr16.unshift(100), "<br>");
+        document.write(arr16, "<br><br>");
+
+        document.write("*** 24 배열 pop *** <br>");
+        document.write(arr16.pop(), "<br>");
+        document.write(arr16, "<br><br>");
+
+        document.write("*** 25 배열 push *** <br>");
+        document.write(arr16.push(500), "<br>");
+        document.write(arr16, "<br><br><br>");
+
+
+
+        //26 객체
+        const obj1 = new Object();
+        obj1[0] = 100;
+        obj1[1] = 200;
+        obj1[2] = "javascript";
+
+        document.write("*** 26 객체 ***<br>");
+        document.write(obj1[0], "<br>");
+        document.write(obj1[1], "<br>");
+        document.write(obj1[2], "<br>");
+        document.write("<br><br>");
+
+
+        //27 객체
+        const obj2 = new Object();
+        obj2.a = 100;
+        obj2.b = 200;
+        obj2.c = "javascript";
+
+        document.write("*** 27 객체 ***<br>");
+        document.write(obj2.a, "<br>");
+        document.write(obj2.b, "<br>");
+        document.write(obj2.c, "<br>");
+        document.write("<br><br>");
+
+
+        //28 객체
+        const obj3 = {};
+        obj3.a = 100;
+        obj3.b = 200;
+        obj3.c = "javascript";
+
+        document.write("*** 28 객체 ***<br>");
+        document.write(obj3.a, "<br>");
+        document.write(obj3.b, "<br>");
+        document.write(obj3.c, "<br>");
+        document.write("<br><br>");
+
+
+        //29 객체
+        const obj4 = {
+            a: 100, 
+            b: 200, 
+            c: "javascript"
+        };
+
+        document.write("*** 29 객체 ***<br>");
+        document.write(obj4.a, "<br>");
+        document.write(obj4.b, "<br>");
+        document.write(obj4.c, "<br>");
+        document.write("<br><br>");
+
+
+        //30 객체
+        const obj5 = [
+            {a: 100, b: 200},
+            {c: 300, d: 400}
+        ];
+
+        document.write("*** 30 객체 ***<br>");
+        document.write(obj5[0].a, "<br>");
+        document.write(obj5[0].b, "<br>");
+        document.write(obj5[1].c, "<br>");
+        document.write(obj5[1].d, "<br>");
+        document.write("<br><br>");
+
+
+        //31 객체
+        const obj6 = {
+            a: 100, 
+            b: [200,300], 
+            c: "javascript"
+        }
+
+        document.write("*** 31 객체 ***<br>");
+        document.write(obj6.a, "<br>");
+        document.write(obj6.b[0], "<br>");
+        document.write(obj6.b[1], "<br>");
+        document.write(obj6.c, "<br>");
+        document.write("<br><br>");
+
+
+        //32 객체
+        const obj7 = {
+            a: 100, 
+            b: [200,300], 
+            c: "javascript",
+            d: function(){
+                document.write("자바스크립트가 실행되었습니다.<br>");
+            },
+            e: function(){
+                document.write(this.c + "가 실행되었습니다.<br><br>");
+            }
+        }
+
+        document.write("*** 32 객체 ***<br>");
+        document.write(obj7.a, "<br>");
+        document.write(obj7.b[0], "<br>");
+        document.write(obj7.b[1], "<br>");
+        document.write(obj7.c, "<br>");
+        obj7.d()
+        obj7.e()
+        document.write("<br><br>");
+
+
+        //33 객체 생성자 함수
+        function obj8(a,b){
+            this.a = a;
+            this.b = b;
+            this.c = function(){
+                document.write(this.a + this.b)
+            }
+        }
+        const result1 = new obj8(100,200);
+        const result2 = new obj8("javascript", "react");
+
+        document.write("*** 33 객체 생성자 함수 ***<br>");
+        document.write(result1.a, "<br>");
+        document.write(result1.b, "<br>");
+        document.write(result2.a, "<br>");
+        document.write(result2.b, "<br>");
+        result1.c();
+        result2.c();
+        document.write("<br><br>");
+
+
+        //34 객체 리터럴
+        const name1 = 'array';
+        const name2 = 'object';
+
+        // const obj9 = {
+        //     name1 : name1,
+        //     name2 : name2,
+        // }
+        const obj9 = {
+            name1,
+            name2,
+        }
+        document.write("*** 34 객체 ***<br>");
+        document.write(obj9.name1, "<br>");
+        document.write(obj9.name2, "<br><br>");
+
+
+        //35 객체
+        const obj10 = {
+            name3 : "object",
+            name4 : "array",
+        }
+        const name3 = obj10.name3;
+        const name4 = obj10.name4;
+
+        document.write("*** 35 객체 ***<br>");
+        document.write(name3, "<br>");
+        document.write(name4, "<br><br>");
+
+
+        //36 객체 구조 분해 할당
+        const obj11 = {
+            name5 : "object",
+            name6 : "array",
+        }
+        const { name5, name6 } = obj11;
+
+        document.write("*** 36 객체 구조 분해 할당 ***<br>");
+        document.write(name5, "<br>");
+        document.write(name6, "<br><br>");
+
+
+        //37 배열 구조 분해 할당
+        const arr18 = ["object", "array"];
+        // const name7 = arr18[0];
+        // const name8 = arr18[1];
+        const [name7, name8] = arr18;
+
+        document.write("*** 37 배열 구조 분해 할당 ***<br>");
+        document.write(name7, "<br>");
+        document.write(name8, "<br><br>");
+
+
+        //38 객체 펼침 연산자
+        const spread1 = { 
+            nameA: 'object',
+            nameB: 'array'
+        };
+        const newSpread1 = { ...spread1 }; 
+
+        document.write("*** 38 객체 펼침 연산자 ***<br>");
+        document.write(newSpread1.nameA, "<br>");
+        document.write(newSpread1.nameB, "<br><br>");
+
+
+        //39 객체 펼침 연산자
+        const spread2 = { 
+            nameA: 'object',
+            nameB: 'array'
+        };
+        const newSpread2 = { ...spread1, nameC: 'react' }; 
+
+        document.write("*** 39 객체 펼침 연산자 ***<br>");
+        document.write(newSpread2.nameA, "<br>");
+        document.write(newSpread2.nameB, "<br>");
+        document.write(newSpread2.nameC, "<br><br>");
+
+        
+        //40 배열 펼침 연산자(카피)
+        const spread3 = ['object','array'];
+        const newSpread3 = [ ...spread3 ];
+
+        document.write("*** 40 배열 펼침 연산자 ***<br>");
+        document.write(newSpread3, "<br><br>");
+
+
+        //41 배열 펼침 연산자(결합)
+        const spread4 = ['object','array'];
+        const spread5 = ['react','vue'];
+        const newSpread6 = [ ...spread4, ...spread5 ];
+
+        document.write("*** 41 배열 펼침 연산자(결합) ***<br>");
+        document.write(newSpread6, "<br><br>");
+
+
+
+
+        //42 선언적 함수
+        function func1(){
+            document.write("*** 42 선언적 함수 ***<br>");
+            document.write("function1이 실행되었습니다.<br><br>");
+        }
+        func1(); 
+
+        //43 익명 함수
+        const func2 = function(){
+            document.write("*** 43 익명 함수 ***<br>");
+            document.write("function2이 실행되었습니다.<br><br>");
+        }
+        func2();
+
+        //44 매개변수가 있는 함수
+        function func3(name){
+            document.write("*** 44 매개변수가 있는 함수 ***<br>");
+            document.write(name+"이 실행되었습니다.<br><br>");
+        }
+        func3("function3");
+
+
+        //45 리턴값이 있는 함수
+        function func4(){
+            const str = "function4이 실행되었습니다.";
+            return str;
+        }
+
+        //func4()(X)
+        const value4 = func4();
+        document.write("*** 45 매개변수가 있는 함수 ***<br>");
+        document.write(value4, "<br><br>");
+
+
+        //46 재귀함수 : 함수 정의문 내에서 함수를 다시 호출하여 실행하는 함수
+        
+        // function func5(){
+        //     document.write("function5이 실행되었습니다.");
+        //     //func5() 무한 루프에 빠짐
+        // }
+        // func5();
+
+        function func5(num){
+            if(num == 0){
+                document.write("function5이 실행되었습니다.","<br>");
+            } else {
+                document.write("function5이 실행되었습니다.","<br>");
+                func5(num-1);
+            }
+        }
+        document.write("*** 46 재귀함수 ***<br>");
+        func5(5);
+        document.write("<br><br>");
+
+        //47 콜백함수 
+        function callback(num){
+            for(let i=1; i<=5; i++){
+                num(i);
+            }
+        }
+        const func6 = function(i){
+            document.write("function6이 실행되었습니다.","<br>");
+        }
+        document.write("*** 47 콜백함수  ***<br>");
+        callback(func6);
+        document.write("<br><br>");
+
+
+        //48 콜백함수 
+
+        // function a() {
+        //     console.log('a')
+        // }
+        // function b() {
+        //     console.log('b')
+        // }
+        // a()
+        // b()
+
+        // function a(){
+        //     setTimeout(function(){
+        //         console.log('a')
+        //     },1000);
+        // }
+        // function b(){
+        //     console.log('b')
+        // }
+        // a()
+        // b()
+        
+        //콜백 함수
+        // function a(callback){
+        //     setTimeout(function(){
+        //         console.log('a')
+        //         callback()
+        //     },1000);
+        // }
+        // function b(){
+        //     console.log('b')
+        // }
+        // a(function(){
+        //     b();
+        // })
+        
+        //콜백지옥
+        // function a(callback){
+        //     setTimeout(function(){
+        //         console.log('a')
+        //         callback()
+        //     },1000);
+        // }
+        // function b(callback){
+        //     setTimeout(function(){
+        //         console.log('b')
+        //         callback()
+        //     },1000);
+        // }
+        // function c(callback){
+        //     setTimeout(function(){
+        //         console.log('c')
+        //         callback()
+        //     },1000);
+        // }
+        // function d(callback){
+        //     setTimeout(function(){
+        //         console.log('d')
+        //     },1000);
+        // }
+        // a(function(){
+        //     b(function(){
+        //         c(function(){
+        //             d()
+        //         })
+        //     })
+        // })
+
+
+        //49 즉시 실행 함수 
+        (function(){
+            document.write("*** 49 즉시 실행 함수  ***<br>");
+            document.write("function7이 실행되었습니다.<br><br>");
+        }());
+
+
+        //50 Default parameters1
+        function fun7(msg){
+            if( msg == null) {
+                msg = "함수가 없습니다.";
+            }
+            document.write(msg);
+        }
+        document.write("*** 50 Default parameters1  ***<br>");
+        fun7("function8이 실행되었습니다.<br><br>");
+
+
+        //51 Default parameters2
+        function fun8(msg = '함수가 없습니다.'){
+            document.write(msg);
+        }
+        document.write("*** 51 Default parameters2  ***<br>");
+        fun8("function8이 실행되었습니다.<br><br>");
+
+
+        //52 조건부 연산자(Ternary Operator)
+        function fun9(){
+            let num = false;
+            // if(num){
+            //     document.write("function9이 실행되었습니다.")
+            // } else {
+            //     document.write("function10이 실행되었습니다.")
+            // }
+            num ? document.write("function9이 실행되었습니다.") : document.write("function10이 실행되었습니다.")
+            
+        }
+        document.write("*** 52 조건부 연산자(Ternary Operator)  ***<br>");
+        fun9();
+        
+
+        
+
+    </script>
+</body>
+</html>

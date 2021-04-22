@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javscript</title>
+</head>
+<body>
+    <script>
+        //함수
+        
+        
+        
+        
+
+        //선언적 함수
+        function func1(){
+            document.write("func1이 실행되었습니다.<br>");
+        }
+        func1();
+
+        //화살표 함수(선언적 함수)
+        func2 = () => {
+            document.write("func2이 실행되었습니다.<br>");
+        }
+        func2();
+
+        //화살표 함수(선언적 함수) 한줄(중괄호 생략)
+        func3 = () => document.write("func3이 실행되었습니다.<br>");
+        
+        func3();
+
+        //익명 함수
+        const func4 = function(){
+            document.write("func4이 실행되었습니다.<br>");
+        }
+        func4();
+
+        //익명 함수 -> 화살표 함수
+        const func5 = () => {
+            document.write("func5이 실행되었습니다.<br>");
+        }
+        func5();
+
+        const func6 = () => document.write("func6이 실행되었습니다.<br>");
+        
+        func6();
+
+        //리턴값이 있는 함수
+        function func7(){
+            const str = "func7이 실행되었습니다.<br>";
+            return str;
+        }
+        document.write(func7());
+
+        //리턴값이 있는 함수 -> 화살표 함수
+        func8 = () => {
+            const str = "func8이 실행되었습니다.<br>";
+            return str;
+        }
+        document.write(func8());
+
+        //리턴값이 있는 함수 -> 화살표 함수
+        const func9 = () => {
+            const str = "func9이 실행되었습니다.<br>";
+            return str;
+        }
+        document.write(func9());
+
+        //매개변수가 있는 함수
+        function func10(name){
+            document.write(name)
+        }
+        func10("func10이 실행되었습니다.<br>");
+
+        //매개변수가 있는 함수 --> 화살표 함수
+        func11 = (name) => {
+            document.write(name)
+        }
+        func11("func11이 실행되었습니다.<br>");
+
+        //매개변수가 있는 함수 --> 익명 함수
+        const func12 = (name) => {
+            document.write(name)
+        }
+        func12("func12이 실행되었습니다.<br>");
+
+        //매개변수가 있는 함수 --> 익명 함수 --> 한줄
+        const func13 = (name) => document.write(name);
+
+        func13("func13이 실행되었습니다.<br>");
+
+        //매개변수가 있는 함수 --> 익명 함수 --> 한줄 --> 괄호생략
+        const func14 = name => document.write(name);
+
+        func14("func14이 실행되었습니다.<br>");
+
+        //매개변수가 있는 함수 --> 선언적 함수 --> 한줄 --> 괄호생략
+        func15 = name => document.write(name);
+
+        func15("func15이 실행되었습니다.<br>");
+
+
+    </script>
+</body>
+</html>

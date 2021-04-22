@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0; 
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            overflow: hidden;
+            background: #c9b3a6;
+            color: #020000;
+            display: flex;
+            
+        }
+        .left {
+            width: 50%;
+            height: 100vh;
+            overflow: hidden;
+            background: #fff;
+            cursor: grab;
+        }
+        .right {
+            width: 50%;
+            height: 100vh;
+            overflow: hidden;
+            background: #ccc;
+            cursor: grab;
+        }
+        .menu ul {
+            counter-reset: count;
+        }
+        .menu--item {
+            counter-increment: count;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 50vh;
+            font-size: 120px;
+            line-height: 1.2;
+            padding: 2rem 0;
+            text-align: center;
+            list-style: none;
+            background: #ccc;
+        }
+
+        .right .menu--item {
+            left: auto;
+            right: 0;
+        }
+@media (max-width: 767px) {
+  .menu--item {
+    font-size: 10vw;
+    padding: 1rem 0;
+  }
+}
+.menu--item:nth-child(n+10):before {
+  content: counter(count);
+}
+.menu--item button {
+  color: #020000;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-size: 120px;
+  -webkit-appearance: none;
+  background: none;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  color: #020000;
+  font-family: "Orelo-sw-db", serif;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .menu--item button {
+    font-size: 10vw;
+  }
+}
+.menu--item button:before {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  display: inline-block;
+  transform: translateX(-100%) scale(0.4);
+  content: "0" counter(count);
+  color: #862929;
+  font-family: cursive;
+}
+
+.version {
+  display: inline-block;
+  position: fixed;
+  z-index: 1;
+  text-decoration: none;
+  background: #333;
+  font-family: sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 12px;
+  border-radius: 10px;
+  box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  top: -30px;
+  right: -60px;
+  bottom: auto;
+  transform: rotate(45deg);
+  transform-origin: 0% 100%;
+  border-radius: 0;
+  padding: 8px 30px;
+  font-size: 11px;
+}
+.version:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100px;
+  bottom: 0;
+  right: 0%;
+  background: transparent;
+}
+@media (max-width: 767px) {
+  .version {
+    transform: scale(0.6) rotate(45deg);
+    right: -110px;
+  }
+}
+.scroll {
+    position: fixed;
+    left: 10px; top: 10px;
+    width: 50px; height: 50px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+}
+    .left .menu--wrapper > li:nth-child(1) {background:red;}
+    .left .menu--wrapper > li:nth-child(2) {background:yellow;}
+    .left .menu--wrapper > li:nth-child(3) {background:blueviolet;}
+    .left .menu--wrapper > li:nth-child(4) {background:rebeccapurple;}
+    .left .menu--wrapper > li:nth-child(5) {background:aqua;}
+
+    .right .menu--wrapper > li:nth-child(1) {background:red;}
+    .right .menu--wrapper > li:nth-child(2) {background:yellow;}
+    .right .menu--wrapper > li:nth-child(3) {background:blueviolet;}
+    .right .menu--wrapper > li:nth-child(4) {background:rebeccapurple;}
+    .right .menu--wrapper > li:nth-child(5) {background:aqua;}
+    </style>
+</head>
+<body>
+    <div class="scroll">0</div>
+
+    <div class="left menu">
+        <ul class="menu--wrapper">
+            <li class="menu--item left1"><button href="#">Facebook</button></li>
+            <li class="menu--item left1"><button href="#">Netflix</button></li>
+            <li class="menu--item left1"><button href="#">Instagram</button></li>
+            <li class="menu--item left1"><button href="#">Google</button></li>
+            <li class="menu--item left1"><button href="#">Twitter</button></li>
+            <li class="menu--item left1"><button href="#">Twitter</button></li>
+        </ul>
+    </div>
+    <div class="right menu">
+        <ul class="menu--wrapper">
+            <li class="menu--item left2"><button href="#">Facebook</button></li>
+            <li class="menu--item left2"><button href="#">Facebook</button></li>
+            <li class="menu--item left2"><button href="#">Twitter</button></li>
+            <li class="menu--item left2"><button href="#">Twitter</button></li>
+            <li class="menu--item left2"><button href="#">Twitter</button></li>
+            <li class="menu--item left2"><button href="#">Twitter</button></li>
+        </ul>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+    <script>
+        const $menu = document.querySelector('.menu')
+        const $leftItems = document.querySelectorAll('.left1')
+        const $rightItems = document.querySelectorAll('.left2')
+        let menuHeight = $menu.clientHeight
+        let itemHeight = $leftItems[0].clientHeight
+        let wrapHeight = $leftItems.length * itemHeight
+
+        let scrollSpeed = 0
+        let oldScrollY = 0
+        let scrollY = 0
+        let y = 0
+
+        const lerp = (v0, v1, t) => {
+            return v0 * ( 1 - t ) + v1 * t
+        }
+
+        const dispose = (scroll) => {
+            gsap.set($leftItems, {
+                y: function(i){
+                    return i * itemHeight + scroll;
+                },
+                modifiers: {
+                    y: (y, target) => {
+                        const s = gsap.utils.wrap(-itemHeight, wrapHeight - itemHeight, parseInt(y))
+                        return `${s}px`
+                    }
+                }
+            })
+            gsap.set($rightItems, {
+                y: function(i){
+                    return i * itemHeight - scroll;
+                },
+                modifiers: {
+                    y: (y, target) => {
+                        const s = gsap.utils.wrap(-itemHeight, wrapHeight - itemHeight, parseInt(y))
+                        return `${s}px`
+                    }
+                }
+            })
+        } 
+        dispose(0);
+
+        const handleMouseWheel = (e) => {
+            scrollY -= e.deltaY  
+
+            //deltaY 속성은 아래로 스크롤 할 때 양수 값을 반환하고 위로 스크롤 할 때 음수 값을 반환하고 그렇지 않으면 0을 반환합니다.
+            console.log(e.deltaY)
+        }
+
+        $menu.addEventListener('mousewheel', handleMouseWheel)
+        // $menu.addEventListener('touchstart', handleTouchStart)
+        // $menu.addEventListener('touchmove', handleTouchMove)
+        // $menu.addEventListener('touchend', handleTouchEnd)
+        // $menu.addEventListener('mousedown', handleTouchStart)
+        // $menu.addEventListener('mousemove', handleTouchMove)
+        // $menu.addEventListener('mouseleave', handleTouchEnd)
+        // $menu.addEventListener('mouseup', handleTouchEnd)
+        // $menu.addEventListener('selectstart', () => { return false })
+
+        const render = () => {
+            requestAnimationFrame(render)
+
+            y = lerp(y, scrollY, .1)
+            dispose(y);
+
+            //document.querySelector(".scroll").innerText = parseInt(pageYOffset);
+            document.querySelector(".scroll").innerText = parseInt(scrollY);
+            //console.log(y)
+        
+            // scrollSpeed = y - oldScrollY
+            // oldScrollY = y
+            
+            // gsap.to($items, {
+            //     scale: 1 -  Math.min(100, Math.abs(scrollSpeed)) * .005,
+            //     rotate: scrollSpeed * 0.2
+            // })
+        }
+        render()
+
+
+    </script>
+</body>
+</html>

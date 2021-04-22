@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+</head>
+<body>
+    
+    <script>
+        //변수 선언
+        let x = 100;    //전역 변수
+        let y = 200;    //전역 변수
+        let z = 7000;   //전역 변수
+        
+        //함수 선언
+        function func1(){
+            let x = 100;    //지역 변수
+            let y = 200;    //지역 변수
+            z = 8000;       //전역 변수 7000 -> 8000 변경
+            
+            document.write("함수 안<br>");
+            document.write(x, "<br>");
+            document.write(y, "<br>");
+            document.write(z, "<br>");
+        }
+        func1();
+        
+        document.write("함수 밖<br>");
+        document.write(x, "<br>");
+        document.write(y, "<br>");
+        document.write(z, "<br>");
+    </script>
+</body>
+</html>
+
+
+
+
+
+

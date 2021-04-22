@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout07</title>
+    <style>
+        * { /* 여백 초기화 */
+            padding: 0; 
+            margin: 0;
+        }
+        #wrap {
+            width: 100%;
+        }
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #f3e5f5;
+        }
+        #contents {
+            width: 100%;
+            height: 2000px;
+            background-color: #e1bee7;
+        }
+        #contents #cont1 {
+            width: 100%;
+            height: 1000px;
+            background-color: #ba68c8;
+        }
+        #contents #cont2 {
+            width: 100%;
+            height: 500px;
+            background-color: #ab47bc;
+        }
+        #contents #cont3 {
+            width: 100%;
+            height: 500px;
+            background-color: #9c27b0;
+        }
+
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #ce93d8;
+        }
+
+        .container {
+            width: 1600px;
+            height: inherit;
+            background-color: rgba(0,0,0,0.4);
+            margin: 0 auto; /* 위 0px 아래 0px 왼쪽 auto 오른쪽 auto */
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="container">header</div>
+        </header>
+        <section id="contents">
+            <section id="cont1">
+                <div class="container">cont1</div>
+            </section>
+            <section id="cont2">
+                <div class="container">cont1</div>
+            </section>
+            <section id="cont3">
+                <div class="container">cont1</div>
+            </section>
+        </section>
+        <footer id="footer">
+            <div class="container">footer</div>
+        </footer>
+    </div>
+</body>
+</html>

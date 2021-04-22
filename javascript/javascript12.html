@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript function</title>
+</head>
+<body>
+    <script>
+        // 변수 : 데이터 저장(하나) 변함 
+        // 상수 : 데이터 저장(하나) 변하지 않음
+        // 배열 : 데이터 저장(하나이상) 
+        // 객체 : 데이터 저장(키와 값)
+        // 함수 : 데이터 저장, 실행, 재활용 
+
+        //선언전 함수(기본 함수)
+        function func1(){
+            document.write("func1이 실행되었습니다.<br>");
+        }
+        func1();
+
+        //익명 함수(변수 안에 함수를 저장)
+        let func2 = function(){
+            document.write("func2이 실행되었습니다.<br>");
+        }
+        func2();
+
+        //매개변수가 있는 함수
+        function func3(name){
+            document.write(name);
+        }
+        func3("func3이 실행되었습니다.<br>");
+
+        //리턴값(결과)이 있는 함수
+        function func4(){
+            const str = "func4이 실행되었습니다. <br>";
+            return str;
+        }
+        //func4();
+        document.write(func4());
+
+        
+
+    </script>
+</body>
+</html>

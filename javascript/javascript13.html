@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //화살표 함수(es6) function -> =>
+        //선언적 함수 -> 화살표 함수
+
+        // function func1(){
+        //     document.write("func1이 실행되었습니다.");
+        // }
+        // func1();
+
+        func1 = () => {
+            document.write("func1이 실행되었습니다.<br>");
+        }
+        func1();
+
+        //익명함수 -> 화살표 함수
+        // const func2 = function(){
+        //     document.write("func1이 실행되었습니다.<br>");
+        // }
+        // func2();
+
+        const func2 = () => {
+            document.write("func2이 실행되었습니다.<br>");
+        }
+        func2();
+
+        //리턴값이 있는 함수
+        // function func3(){
+        //     const str = "func3이 실행되었습니다.<br>";
+        //     return str;
+        // }
+        // document.write(func3());
+
+        const func3 = () => {
+            const str = "func3이 실행되었습니다.<br>";
+            return str;
+        }
+        document.write(func3());
+
+        //매개변수가 있는 함수
+        // function func4(name){
+        //     document.write(name);
+        // }
+        // func4("func4이 실행되었습니다.<br>");
+
+        func4 = (name) => {
+            document.write(name);
+        }
+        func4("func4이 실행되었습니다.<br>");
+
+        const func5 = (name) => {
+            document.write(name);
+        }
+        func5("func5이 실행되었습니다.<br>");
+
+        const func6 = name => {
+            document.write(name);
+        }
+        func6("func6이 실행되었습니다.<br>");
+
+        const func7 = name => document.write(name);
+
+        func7("func7이 실행되었습니다.<br>");
+
+        func8 = name => document.write(name);
+
+        func8("func8이 실행되었습니다.<br>");
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

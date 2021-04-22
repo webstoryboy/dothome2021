@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+    <script>
+        let arr1 = new Array();
+        arr1[0] = 100;
+        arr1[1] = 200;
+        arr1[2] = "javascript";
+
+        document.write(arr1[0], "<br>");
+        document.write(arr1[1], "<br>");
+        document.write(arr1[2], "<br><br>");
+
+        let arr2 = new Array(100, 200, "javascript");
+
+        document.write(arr2[0], "<br>");
+        document.write(arr2[1], "<br>");
+        document.write(arr2[2], "<br><br>");
+
+        let arr3 = [];
+        arr3[0] = 100;
+        arr3[1] = 200;
+        arr3[2] = "javascript";
+
+        document.write(arr3[0], "<br>");
+        document.write(arr3[1], "<br>");
+        document.write(arr3[2], "<br><br>");
+
+        let arr4 = [100, 200, "javascript"];
+
+        document.write(arr4[0], "<br>");
+        document.write(arr4[1], "<br>");
+        document.write(arr4[2], "<br><br>");
+
+        //2차 배열 
+        let arr5 = [100, 200, ["javascript","jquery"]];
+
+        document.write(arr5[0], "<br>");
+        document.write(arr5[1], "<br>");
+        document.write(arr5[2], "<br>");
+        document.write(arr5[2][0], "<br>");
+        document.write(arr5[2][1], "<br><br>");
+
+        //배열 갯수
+        let arr6 = [100, 200, "javascript"];
+
+        document.write(arr6.length, "<br><br>");
+
+        //배열 데이터 불러오기(for문)
+        let arr7 = [100, 200, "javascript"];
+
+        for( let i=0; i<arr7.length; i++ ){
+            document.write(arr7[i], "<br>");
+        }
+        document.write("<br><br>")
+
+        //배열 데이터 불러오기(forEach)
+        let arr8 = [100, 200, 300, 400, 500];
+
+        //arr8.forEach(function(){});
+        arr8.forEach((elem) => {
+            document.write(elem, "<br>");
+        });
+
+        arr8.forEach(elem => {
+            document.write(elem, "<br>");
+        });
+
+        arr8.forEach(elem => document.write(elem, "<br>"));
+
+        //배열 데이터 불러오기(map)
+        let arr9 = [600, 700, 800, 900, 1000];
+
+        arr9.map((elem) => {
+            document.write(elem, "<br>");
+        });
+
+        //배열 데이터 불러오기(for in문)
+        let arr10 = [100, 200, 300, 400, 500];
+        for( let i in arr10 ){
+            document.write(arr10[i]);
+        }
+
+        //배열 데이터 불러오기(for of문)
+        let arr11 = [100, 200, 300, 400, 500];
+        for( let i of arr11 ){
+            document.write(i);
+        }
+    </script>
+</body>
+</html>

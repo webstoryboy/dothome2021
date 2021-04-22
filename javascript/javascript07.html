@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript : object</title>
+</head>
+<body>
+    
+    <script>
+        const obj1 = new Object(); //객체 선언
+        obj1[0] = 100;
+        obj1[1] = 200;
+        obj1[2] = "javascript";
+        
+        document.write(obj1[0],"<br>");
+        document.write(obj1[1],"<br>");
+        document.write(obj1[2],"<br>");
+        
+        const obj2 = new Object(); //객채 생성
+        obj2.x = 100;
+        obj2.y = 200;
+        obj2.z = "javascript";
+        
+        document.write(obj2.x,"<br>");
+        document.write(obj2.y,"<br>");
+        document.write(obj2.z,"<br>");
+        
+        const obj3 = {};
+        obj3.x = 100;
+        obj3.y = 200;
+        obj3.z = "javascript";
+        
+        document.write(obj3.x,"<br>");
+        document.write(obj3.y,"<br>");
+        document.write(obj3.z,"<br>");
+        
+        const obj4 = {
+            x:100, 
+            y:200, 
+            z:"javascript"
+        }
+        
+        document.write(obj4.x,"<br>");
+        document.write(obj4.y,"<br>");
+        document.write(obj4.z,"<br>");
+        document.write("<br><br>");
+        
+        //객체(배열 속에 객체)
+        const obj5 = [
+            {
+                x:100, 
+                y:200
+            }, 
+            {
+                z:"javascript"
+            }
+        ]
+        document.write(obj5[0].x, "<br>");
+        document.write(obj5[0].y, "<br>");
+        document.write(obj5[1].z, "<br>");
+        document.write("<br><br>");
+        
+        //객체(객체 속에 배열)
+        const obj6 = {
+            x: 100,
+            y: [200, 300],
+            z: "javascript"
+        }
+        
+        document.write(obj6.x, "<br>");
+        document.write(obj6.y, "<br>");
+        document.write(obj6.y[0], "<br>");
+        document.write(obj6.y[1], "<br>");
+        document.write(obj6.z, "<br>");
+        document.write("<br><br>");
+        
+        //객체(객체 속에 변수)
+        const x = 100;
+        const y = 200; 
+        const z = "javascript";
+        
+        const obj7 = { x, y, z } 
+        
+        document.write(obj7.x, "<br>");
+        document.write(obj7.y, "<br>");
+        document.write(obj7.z, "<br>");
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+

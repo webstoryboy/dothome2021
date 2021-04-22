@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout03</title>
+    <style>
+        * {
+            margin: 0; 
+            padding: 0;
+        }
+        body {
+            background-color: #e1f5fe;
+        }
+        #wrap {
+            background-color: #b3e5fc;
+            width: 1000px;
+            height: 900px;
+            margin: 0 auto; /* 블록구조를 가운데 정렬 */
+            text-align: center; /* 인라인 구조를 가운데 정렬 */
+            color: #fff;
+            font-size: 60px;
+            text-transform: uppercase;
+        }
+        #side {
+            background-color: #81d4fa;
+            width: 300px;
+            height: 900px;
+            line-height: 900px;
+            float: left;
+        }
+        #header {
+            background-color: #4fc3f7;
+            width: 700px;
+            height: 300px;
+            line-height: 300px;
+            float: left;
+        }
+        #contents {
+            background-color: #29b6f6;
+            width: 700px;
+            height: 300px;
+            line-height: 300px;
+            float: left;
+        }
+        #footer {
+            background-color: #03a9f4;
+            width: 700px;
+            height: 300px;
+            line-height: 300px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="side">side</div>
+        <div id="header">header</div>
+        <div id="contents">contents</div>
+        <div id="footer">footer</div>
+    </div>
+</body>
+</html>

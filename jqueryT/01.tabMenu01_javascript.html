@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭 메뉴 | 자바스크립트</title>
+    <style>
+        @font-face {
+            font-family: 'S-CoreDream-3Light';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: rgba(50,37,11,0.8);
+            font-family: 'S-CoreDream-3Light';
+            }
+        #tab-menu {
+            width: 600px;
+            background: #eaa110;
+            position: absolute;
+            left: 50%; 
+            top: 20%;
+            transform: translate(-50%);
+            border-radius: 5px;
+        }
+        #tab-btn ul {
+            display: flex;
+        }
+        #tab-btn li {
+            flex-basis: 20%;
+            text-align: center;
+            list-style: none;
+        }
+        #tab-btn li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 20px 20px 15px 20px;
+            display: block;
+        }
+        #tab-btn li.active a {
+            border-bottom: 3px solid #2b110e;
+            color: #2b110e;
+        }
+        #tab-cont {
+            background: #fff;
+            padding: 20px;
+            border-radius: 0 0 5px 5px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        #tab-cont > div {
+            display: none;
+        }
+        #tab-cont > div:nth-child(1){
+            display: block;
+        }
+
+        #tab-btn li:nth-child(1){
+            color: red
+        }
+    </style>
+</head>
+<body>
+    <div id="tab-menu">
+        <div id="tab-btn">
+            <ul>
+                <li class="active"><a href="#">Tab1</a></li>
+                <li><a href="#">Tab2</a></li>
+                <li><a href="#">Tab3</a></li>
+                <li><a href="#">Tab4</a></li>
+                <li><a href="#">Tab5</a></li>
+            </ul>
+        </div>
+        <div id="tab-cont">
+            <div>
+                1. 에버기븐호 복구작업에 정통한 복수의 소식통은 이날 오전 로이터에 수에즈 운하에 좌초해 일주일째 운하를 가로막고 
+                있던 에버기븐호가 운하의 양쪽 제방과 평행하게 위치해 ‘정상 항로’로 복귀했다고 전했다.
+            </div>
+            <div>
+                2. 앞서 AP통신은 운하 통항 서비스 업체인 레스 에이전시스를 인용, 에버기븐호 일부 부양 소식을 보도했다. 
+                10척의 예인선과 모래를 빼내기 위한 준설기 등이 동원된 끝에 약간의 돌파구가 마련됐다고 전했다.
+            </div>
+            <div>
+                3. 수에즈 운하가 미국 뉴욕의 엠파이어 스테이트 빌딩보다 큰 대형 화물선에 막히면서 화장지, 커피, 가구 등의 
+                물량 공급 차질이 우려된다. 22만 4000t의 화물선 에버그린사의 에버기븐호는 지난 23일 중국에서 출발해 네덜란드 
+                로테르담으로 향하던 중 수에즈 운하에서 좌초했다.
+            </div>
+            <div>
+                4. 수에즈 운하가 막히기 전부터 코로나19 사태로 나이키, 코스트코, 도요타, 혼다, 삼성 등은 물류에 곤란을 겪었고 
+                에버기븐호의 좌초로 인해 물류 장애는 더 심각해질 전망이다. 전문가들은 수에즈 운하 봉쇄에 따른 비용이 시간당 
+                4억달러(약 4526억원)에 이를 것으로 전망했는데, 대안 경로인 아프리카 대륙을 돌아서 가면 약 2주의 시간이 더 걸린다.
+            </div>
+            <div>
+                5. 세계 최대 화장지 생산업체인 수자노 사는 27일(현지시간) 블룸버그 통신을 통해 펄프 공급이 늦어지는 것을 우려했다. 
+                화장지 생산에 쓰이는 세계 펄프 생산량의 3분의 1을 소비하는 수자노 측은 수에즈 운하 사태로 최소 한 달간 펄프 공급 차질을 예상했다.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const tabBtn = document.querySelectorAll("#tab-btn > ul > li");
+        const tabCont = document.querySelectorAll("#tab-cont > div");
+
+        tabBtn.forEach((elem, index) => {
+            elem.addEventListener('click', function(){ 
+
+                tabBtn.forEach(el => {
+                    el.classList.remove("active");
+                })
+                elem.classList.add("active");
+
+                tabCont.forEach(el => {
+                    el.style.display = "none";
+                })
+                tabCont[index].style.display ="block";
+
+            });
+        });
+
+
+
+        // tabMenu.forEach((el, index)=>{
+        //     el.addEventListener('click',(e)=>{
+        //         e.preventDefault();
+        //         let btnTarget = e.target.parentNode;
+        //         let idx = btnTarget.dataset.indexNumber;
+        //         for(let i=0; i<el.children.length; i++){
+        //             el.children[i].classList.remove("active");
+        //             codeContents[index].children[i].style.display = "none";
+        //         }
+        //         btnTarget.classList.add("active");
+        //         codeContents[index].children[idx-1].style.display = "block";
+        //     })
+        // })
+        
+    </script>
+</body>
+</html>
